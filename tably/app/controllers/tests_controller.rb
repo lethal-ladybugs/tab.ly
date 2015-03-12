@@ -7,3 +7,4 @@ class TestsController < ApplicationController
 	end
 
 end
+		# results = Yelp.client.business('yelp-san-francisco').to_json
