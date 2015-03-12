@@ -1,12 +1,19 @@
 Rails.application.routes.draw do
 
-
+  root :to => '/'
+  
   resources :businesses do
     resources :jobs do
       resources :ratings 
     end
   end
+  
   resources :users
+
+  resources :sessions, only: [:new, :create, :destroy]
+  
+  post '/login', :to => 'sessions#create'
+
 
 
 

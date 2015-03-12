@@ -3,6 +3,13 @@
 <h1>Signup!</h1>
 
   <%= form_tag '/users', :method => 'CREATE', :id => 'new-user-form' do %>
+  
+  <%= label_tag :f_name %>
+  <%= label_field :f_name %>
+
+ 	<%= label_tag :l_name %>
+  <%= label_field :l_name %>
+
   <%= label_tag :email %>
   <%= email_field :email %>
 
@@ -17,3 +24,4 @@
 
 
 </div>
+
