@@ -33,11 +33,15 @@ ActiveRecord::Schema.define(version: 20150312163320) do
   end
 
   create_table "ratings", force: :cascade do |t|
-    t.boolean  "good"
-    t.boolean  "bad"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "number"
+    t.integer  "job_id"
+    t.integer  "user_id"
   end
+
+  add_index "ratings", ["job_id"], name: "index_ratings_on_job_id", using: :btree
+  add_index "ratings", ["user_id"], name: "index_ratings_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "f_name",          null: false

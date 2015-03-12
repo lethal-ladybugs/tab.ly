@@ -1,0 +1,15 @@
+
+<h1>Businesses</h1>
+
+<% if @businesses %>
+
+	<% @businesses.each do |business| %>
+		<ul>
+			
+			<li> <%= link_to business.name, business_path(business)%> </li>
+
+		</ul>
+	
+	<% end %>
+
+<% end %>
