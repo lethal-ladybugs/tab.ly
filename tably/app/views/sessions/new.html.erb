@@ -1,0 +1,15 @@
+<div id="user-login">
+
+<h1>Login!</h1>
+
+<%= form_tag '/session', :method => 'POST', :id => 'user-login-form' do %>
+  <%= label_tag  :email %>
+  <%= email_field :email %>
+
+  <%= label_tag  :password %>
+  <%= password_field :password %>
+
+  <%= submit_tag "Login" %>
+<% end %>
+
+</div>

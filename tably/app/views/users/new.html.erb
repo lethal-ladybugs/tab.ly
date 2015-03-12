@@ -1,0 +1,19 @@
+<div id="user-signup">
+
+<h1>Signup!</h1>
+
+  <%= form_tag '/users', :method => 'CREATE', :id => 'new-user-form' do %>
+  <%= label_tag :email %>
+  <%= email_field :email %>
+
+  <%= label_tag :password %>
+  <%= password_field :password %>
+
+  <%= label_tag :password_confirmation %>
+  <%= password_field :password_confirmation %>
+
+  <%= submit_tag "Signup" %>
+<% end %>
+
+
+</div>
