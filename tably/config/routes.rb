@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+get 'yelp' => 'tests#show'
 
   resources :businesses do
     resources :jobs do
