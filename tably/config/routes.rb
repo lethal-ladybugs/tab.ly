@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
 
-  root :to => 'static#welcome'
+
+root :to => 'static#welcome'
   
+
+get 'yelp' => 'tests#show'
+
+
   resources :businesses do
     resources :jobs do
       resources :ratings 
