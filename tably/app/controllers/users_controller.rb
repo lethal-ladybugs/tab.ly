@@ -15,7 +15,7 @@ class UsersController < ApplicationController
 
 	def create 
 		@user = User.new(user_params)
-
+		binding.pry
 		if @user.save 
 
 			token = SecureRandom.urlsafe_base64

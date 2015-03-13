@@ -1,2 +1,8 @@
 
 <%= @business.name %>
+
+<% @business.jobs.each do |job| %>
+
+	<li> <%= job.user.full_name %> </li>
+
+<% end %>
