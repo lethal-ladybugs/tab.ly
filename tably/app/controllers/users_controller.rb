@@ -15,8 +15,13 @@ class UsersController < ApplicationController
 
 	def create 
 		@user = User.new(user_params)
+		
+		# @user.password = params[:user][:password]
+		# @user.password_confirmation = params[:user][:password_confirmation]
 
-		if @user.save 
+		if @user.valid?
+			
+			@user.save 
 
 			token = SecureRandom.urlsafe_base64
 			
@@ -29,7 +34,7 @@ class UsersController < ApplicationController
 
 		else 
 
-		 redirect_to new_url 
+		 render :new
 
 		end
 	end
@@ -51,7 +56,7 @@ class UsersController < ApplicationController
 	end
 
 	def user_params 
-		params.require(:user).permit(:email, :f_name, :l_name, :password, :confirmation_password)
+		params.require(:user).permit(:email, :f_name, :l_name, :password, :password_confirmation)
 	end
 
 end
