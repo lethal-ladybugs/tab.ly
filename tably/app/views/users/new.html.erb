@@ -7,7 +7,7 @@
   <% if @user.errors.messages %>
   <ul> 
     <%  @user.errors.messages.each do |key, message| %>
-    <li><%= message %></li>
+    <li><%= message[0] %></li>
 <% end %>
   </ul>
 
