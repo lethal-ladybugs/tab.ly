@@ -2,14 +2,18 @@
 
 <h1>Login!</h1>
 
-<%= form_tag '/session', :method => 'POST', :id => 'user-login-form' do %>
-  <%= label_tag  :email %>
-  <%= email_field :email %>
+<%= form_tag sessions_path, method: 'post' do %>
+  
+ 	<%= label_tag(:email, "Email")%>
+  <%= email_field(:user, :email)%><br>
 
-  <%= label_tag  :password %>
-  <%= password_field :password %>
+  <%= label_tag(:user, "Password")%>
+  <%= password_field(:user, :password)%><br>
 
   <%= submit_tag "Login" %>
+
 <% end %>
+
+<%= link_to "Signup", new_user_url, class: :button %>
 
 </div>

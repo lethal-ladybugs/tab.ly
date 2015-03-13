@@ -1,43 +1,43 @@
 class SessionsController < ApplicationController
 
 	def new 
-		@user = User.new
+		user = User.new
 	end
 
 	def create 
-		@user = User.find_by_email(params[:email])
+	
+		user = User.find_by_email(params[:user][:email])
 
-			if @user && @user.authenticate(params[:password])
+			if user && user.authenticate(params[:user][:password])
+			
 				token = SecureRandom.urlsafe_base64
-
+			
 				session[:session_token] = token 
 
-				@user.session_token = token 
-				@user.save 
+				user.session_token = token 
+				user.save 
 
 				redirect_to root_url 
 
 			else 
-
-			 	redirect_to new_session_url
-			
+			  render :new 
 			end
 	end
 
-	def destroy 
+	def destroy
 
-		@user = current_user 
+    user = current_user
 
-		token = SecureRandom.urlsafe_base64
-		session[:session_token] = token 
+    if user
 
-		if @user 
-			@user.session_token = nil 
-			@user.save 
-		end 
+			session[:session_token] = nil
 
-			redirect_to root_url 
+      user.session_token = nil
+      user.save
+    end
 
-	end
+    redirect_to root_url
+  
+  end
 
 end

@@ -4,24 +4,26 @@
 
   <%= form_tag '/users', :method => 'CREATE', :id => 'new-user-form' do %>
   
-  <%= label_tag :f_name %>
-  <%= label_field :f_name %>
+  <%= label_tag(:f_name, "First Name")%>
+  <%= text_field(:user, :f_name )%><br>
 
- 	<%= label_tag :l_name %>
-  <%= label_field :l_name %>
+ 	<%= label_tag(:l_name, "Last Name")%>
+  <%= text_field(:user, :l_name )%><br>
 
-  <%= label_tag :email %>
-  <%= email_field :email %>
+  <%= label_tag(:email, "Email")%>
+  <%= email_field(:user, :email)%><br>
 
-  <%= label_tag :password %>
-  <%= password_field :password %>
+  <%= label_tag(:user, "Password")%>
+  <%= password_field(:user, :password)%><br>
 
-  <%= label_tag :password_confirmation %>
-  <%= password_field :password_confirmation %>
+  <%= label_tag(:password_confirmation, "Confirm Password")%>
+  <%= password_field(:user, :password_confirmation)%><br>
 
   <%= submit_tag "Signup" %>
 <% end %>
 
 
 </div>
+
+
 

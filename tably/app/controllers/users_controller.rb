@@ -18,6 +18,13 @@ class UsersController < ApplicationController
 
 		if @user.save 
 
+			token = SecureRandom.urlsafe_base64
+			
+				session[:session_token] = token 
+
+				@user.session_token = token 
+				@user.save 
+
 			redirect_to root_url 
 
 		else 
@@ -25,6 +32,7 @@ class UsersController < ApplicationController
 		 redirect_to new_url 
 
 		end
+	end
 
 	def update 
 		@user.update(user_params)
@@ -33,7 +41,7 @@ class UsersController < ApplicationController
 
 	def destroy 
 		@user.destroy 
-		redirect_to users_url 
+		redirect_to root_url 
 	end
 
 	private 

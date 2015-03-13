@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root :to => '/'
+  root :to => 'static#welcome'
   
   resources :businesses do
     resources :jobs do
@@ -10,9 +10,10 @@ Rails.application.routes.draw do
   
   resources :users
 
-  resources :sessions, only: [:new, :create, :destroy]
-  
-  post '/login', :to => 'sessions#create'
+  resources :sessions, only: [:new, :create]
+
+  delete '/sessions' => 'sessions#destroy'
+
 
 
 
