@@ -6,3 +6,16 @@
 	<%end%>
 
 	<h1>Welcome!</h1>
+
+	<%= form_tag '/businesses', :method => 'GET', :id => 'search-form' do %>
+
+	<%= label_tag(:name, "Business Name")%>
+  <%= text_field(:business, :name, :value => "Please input a business name" )%><br>
+
+  <%= label_tag(:zipcode, "Zip Code")%>
+  <%= text_field(:business, :zipcode, :value => "Please input a zip code" )%><br>
+  <%= submit_tag "Go!" %>
+
+<% end %>
+
+ 
