@@ -3,7 +3,16 @@
 <h1>Signup!</h1>
 
   <%= form_tag '/users', :method => 'CREATE', :id => 'new-user-form' do %>
-  
+
+  <% if @user.errors.messages %>
+  <ul> 
+    <%  @user.errors.messages.each do |key, message| %>
+    <li><%= message %></li>
+<% end %>
+  </ul>
+
+<% end %>
+
   <%= label_tag(:f_name, "First Name")%>
   <%= text_field(:user, :f_name )%><br>
 
@@ -13,10 +22,10 @@
   <%= label_tag(:email, "Email")%>
   <%= email_field(:user, :email)%><br>
 
-  <%= label_tag(:user, "Password")%>
+  <%= label_tag("Password")%> 
   <%= password_field(:user, :password)%><br>
 
-  <%= label_tag(:password_confirmation, "Confirm Password")%>
+  <%= label_tag("Confirm Password")%>
   <%= password_field(:user, :password_confirmation)%><br>
 
   <%= submit_tag "Signup" %>

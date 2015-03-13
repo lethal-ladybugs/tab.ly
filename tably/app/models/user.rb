@@ -1,10 +1,13 @@
 class User < ActiveRecord::Base
 	
-	attr_reader :password 
+	attr_reader :password
+	attr_accessor :password_confirmation
 	has_secure_password 
-	validates :email, :password_digest, presence: true 
-	validates :password, length: { minimum: 6, allow_nil: true}
-	validates :password, confirmation: true
+	validates :email, presence: true 
+	validates :password, 
+						:presence => true, 
+						:length => { :minimum => 6}
 	has_many :jobs
-	
+
 end
+                              
