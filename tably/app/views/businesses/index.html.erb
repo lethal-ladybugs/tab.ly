@@ -13,3 +13,11 @@
 	<% end %>
 
 <% end %>
+
+<% @parsed['businesses'].each do |biz| %>
+	
+	<p><a href="/businesses/<%=biz['id']%>"><%=biz['name']%></a></p>
+	<img src="<%=biz['image_url']%>" alt="">
+	<p><%= biz['location'] %></p>
+
+<% end %>
