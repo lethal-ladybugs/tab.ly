@@ -1,5 +1,13 @@
 
 <h1><%= @business['name'] %></h1>
 <% @employees.each do |employee| %>
-	<h3><%= employee.user.f_name %></h3>
-	<% end %>
+<% array = [] %>
+	<h3><%= employee.user.f_name %><%= employee.user.l_name%></h3>
+		<% employee.ratings.each do |ratings| %>
+			<% if ratings.good == true %>
+				<% x = ratings.good %>
+				<% array.push(x) %>
+				<% end %>
+		<% end %>
+	<h3>RATING: <%= array.length %></h3>
+	<% end %>	
