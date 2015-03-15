@@ -1,6 +1,6 @@
 
 <h1>Businesses</h1>
-
+<!-- 
 <% if @businesses %>
 
 	<% @businesses.each do |business| %>
@@ -12,12 +12,28 @@
 	
 	<% end %>
 
-<% end %>
+<% end %> -->
 
 <% @parsed['businesses'].each do |biz| %>
-	
+
 	<p><a href="/businesses/<%=biz['id']%>"><%=biz['name']%></a></p>
 	<img src="<%=biz['image_url']%>" alt="">
-	<p><%= biz['location'] %></p>
+
+	<% location = biz['location'] %>
+	<% phone = biz['display_phone'] %>
+
+	<%= location['address'] %>
+	<%= location['city'] %>
+	<%	if location['neighborhoods'] %>
+		<%= location['neighborhoods'][0] %>
+	<% end %>
+	<%=	location['postal_code'] %>
+	<h3><%= phone.gsub('+', '') %></h3>
+
+	<%= biz['categories'][0][0] %>
 
 <% end %>
+
+
+
+

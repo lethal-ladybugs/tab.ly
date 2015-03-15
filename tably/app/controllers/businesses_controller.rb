@@ -16,6 +16,7 @@ class BusinessesController < ApplicationController
 	def show
 		results = Yelp.client.business(params[:id]).to_json
 		@business = JSON.parse(results)
+		@employees = Job.where(yelp_id: params[:id])
 		# @business = Business.find_by({id: params[:id]})
 	end
 
