@@ -1,8 +1,12 @@
+
 <% if current_user %>
+
 	<div id="log-out-div">
 		<%= button_to "Log Out", '/sessions', method: :delete, :id => 'log-out-button' %><br>
 	</div>
 <%end%>
+
+
 
 	<h1>Welcome!</h1>
 
@@ -16,5 +20,4 @@
   <%= submit_tag "Go!" %>
 
 <% end %>
-
  

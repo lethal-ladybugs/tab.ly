@@ -6,7 +6,9 @@ class User < ActiveRecord::Base
 	validates :email, presence: true 
 	validates :password, 
 						:presence => true, 
-						:length => { :minimum => 6}
+						:length => { :minimum => 6},
+						:on => :create
+	
 	has_many :jobs
 
 end
