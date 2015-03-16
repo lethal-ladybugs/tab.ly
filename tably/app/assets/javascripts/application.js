@@ -14,10 +14,5 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-<<<<<<< HEAD
-
-//= require jquery.ui.all
-=======
 //= require jquery-ui
->>>>>>> monday
 //= require jquery.modal
