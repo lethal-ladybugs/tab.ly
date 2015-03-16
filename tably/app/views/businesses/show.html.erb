@@ -1,3 +1,17 @@
+<h3>Add employee/job</h3>
+
+<nav class="main-nav">
+	<ul>
+		<li><a class="cd-signin" href="#0">Sign in</a>
+<%= form_tag('/businesses/' + @business["id"] + '/jobs', method: 'post') do %>
+
+	<%= label_tag(:position, "JOB POSITION:")%>
+	<%= text_field_tag(:position) %>
+	<%= submit_tag("submit") %>
+
+<% end %>
+
+
 
 <h1><%= @business['name'] %></h1>
 <% @employees.each do |employee| %>
