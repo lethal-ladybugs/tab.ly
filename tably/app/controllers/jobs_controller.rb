@@ -10,7 +10,7 @@ class JobsController < ApplicationController
 	end
 
 	def new
-		@business = Business.all
+		@business_id = params[:business_id]
 	end
 
 end
