@@ -1,5 +1,8 @@
 <h3>Add employee/job</h3>
 
+<nav class="main-nav">
+	<ul>
+		<li><a class="cd-signin" href="#0">Sign in</a>
 <%= form_tag('/businesses/' + @business["id"] + '/jobs', method: 'post') do %>
 
 	<%= label_tag(:position, "JOB POSITION:")%>
@@ -22,5 +25,3 @@
 		<% end %>
 	<h3>RATING: <%= array.length %></h3>
 <% end %>
-
-<%= @business['id'] %>
