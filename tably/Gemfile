@@ -50,5 +50,7 @@ group :development, :test do
 
   gem 'yelp'
 
+  gem "paperclip", "~> 4.2"
+
 end
 
