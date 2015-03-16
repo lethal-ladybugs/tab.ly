@@ -31,6 +31,15 @@
 	<h3><%= phone.gsub('+', '') %></h3>
 
 	<%= biz['categories'][0][0] %>
+	
+	<% if biz['categories'][1] %>
+		<%= biz['categories'][1][0] %>
+	<% end %>
+	
+	<% if biz['categories'][2] %>
+		<%= biz['categories'][2][0] %>
+	<% end %>
+
 
 	<a href="/businesses/<%=biz['id']%>"><button>Go!</button></a>
 
