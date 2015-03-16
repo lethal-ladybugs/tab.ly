@@ -1,3 +1,14 @@
+<h3>Add employee/job</h3>
+
+<%= form_tag('/businesses/' + @business["id"] + '/jobs', method: 'post') do %>
+
+	<%= label_tag(:position, "JOB POSITION:")%>
+	<%= text_field_tag(:position) %>
+	<%= submit_tag("submit") %>
+
+<% end %>
+
+
 
 <h1><%= @business['name'] %></h1>
 <% @employees.each do |employee| %>
@@ -11,3 +22,5 @@
 		<% end %>
 	<h3>RATING: <%= array.length %></h3>
 <% end %>
+
+<%= @business['id'] %>
