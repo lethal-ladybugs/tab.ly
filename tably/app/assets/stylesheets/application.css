@@ -13,7 +13,9 @@
  *= require font-awesome
  *= require_tree .
  *= require_self
+<<<<<<< HEAD
  */
 
- *= require jquery.ui.all
+
+ *= require jquery-ui
  *= require jquery.modal
