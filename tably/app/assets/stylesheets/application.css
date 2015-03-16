@@ -11,8 +11,7 @@
  * file per style scope.
  *
  *= require font-awesome
+
  *= require_tree .
  *= require_self
- *= require jquery-ui
- *= require jquery.modal
  */

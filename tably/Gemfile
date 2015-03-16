@@ -33,6 +33,10 @@ group :assets do
   gem 'jquery-modal-rails'
 end
 
+
+
+
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 # Use Capistrano for deployment
