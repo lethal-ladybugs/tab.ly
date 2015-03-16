@@ -22,7 +22,7 @@
 	<% location = biz['location'] %>
 	<% phone = biz['display_phone'] %>
 
-	<%= location['address'] %>
+	<%= location['address'][0] %>
 	<%= location['city'] %>
 	<%	if location['neighborhoods'] %>
 		<%= location['neighborhoods'][0] %>

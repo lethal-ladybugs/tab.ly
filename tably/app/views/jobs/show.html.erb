@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title><%= @job.user.fullname %></title>
+</head>
+	<div class="link-bar">
+		<a href="#" class="back"></a>
+	</div>
+	<div class="image">
+		<%= image_tag @job.user.avatar.url(:medium) %>
+	</div>
+	<div class="desc">
+		<h3 class="name">Alex Deschamps</h3>
+			<p>Waiter</p>
+			<p class='ratings'><%= @job.rating_count %> Ratings</p>
+		<button class="review">Give me a Review</button>
+	</div>
+
+<body>
+	
+</body>
+</html>
