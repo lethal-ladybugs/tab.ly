@@ -2,7 +2,7 @@
 
 <h1>Signup!</h1>
 
-  <%= form_tag '/users', :method => 'CREATE', :id => 'new-user-form' do %>
+  <%= form_tag '/users', :method => 'CREATE', multipart: true, :id => 'new-user-form' do %>
 
   <% if @user.errors.messages %>
   <ul> 
@@ -13,11 +13,14 @@
 
 <% end %>
 
+  <%= label_tag(:avatar, "Your Pic")%>
+  <%= file_field(:user, :avatar)%><br>
+
   <%= label_tag(:f_name, "First Name")%>
-  <%= text_field(:user, :f_name )%><br>
+  <%= text_field(:user, :f_name)%><br>
 
  	<%= label_tag(:l_name, "Last Name")%>
-  <%= text_field(:user, :l_name )%><br>
+  <%= text_field(:user, :l_name)%><br>
 
   <%= label_tag(:email, "Email")%>
   <%= email_field(:user, :email)%><br>
@@ -30,7 +33,6 @@
 
   <%= submit_tag "Signup" %>
 <% end %>
-
 
 </div>
 
