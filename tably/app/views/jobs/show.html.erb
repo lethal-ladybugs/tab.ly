@@ -17,6 +17,16 @@
 		<button class="review">Give me a Review</button>
 	</div>
 
+	<%= form_tag('/businesses/' + @job.yelp_id.to_s + '/jobs/' + @job.id.to_s + '/ratings', method: 'post') do %>
+	<%= radio_button_tag(:button, true) %>
+	<%= label_tag(:like_button, "Like Me?") %>
+	<%= radio_button_tag(:button, false) %>
+	<%= label_tag(:dislike_button, "Don't like") %>
+	<%= submit_tag("SUBMIT") %>
+	<% end %>
+
+
+
 <body>
 	
 </body>

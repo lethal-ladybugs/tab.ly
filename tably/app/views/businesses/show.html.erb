@@ -15,7 +15,7 @@
 <h1><%= @business['name'] %></h1>
 <% @employees.each do |employee| %>
 <% array = [] %>
-	<h3><%= employee.user.f_name %><%= employee.user.l_name%></h3>
+	<a href="/businesses/<%=employee.yelp_id%>/jobs/<%=employee.id%>"><h3><%=employee.user.fullname %></h3></a>
 		<% employee.ratings.each do |ratings| %>
 			<% if ratings.good == true %>
 				<% x = ratings.good %>
