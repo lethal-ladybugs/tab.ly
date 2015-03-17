@@ -2,6 +2,7 @@ class JobsController < ApplicationController
 
 	def show
 		@job = Job.find_by({id: params["id"]})
+		@rating = Rating.new({job_id: params["id"]})
 	end
 
 	def create
