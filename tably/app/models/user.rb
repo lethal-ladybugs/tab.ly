@@ -20,5 +20,9 @@ class User < ActiveRecord::Base
 	
 	has_many :jobs
 
+	def fullname
+		self.f_name + " " + self.l_name
+	end
+
 end
                               
