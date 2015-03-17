@@ -1,6 +1,7 @@
 <h3>Add employee/job</h3>
 
 
+<<<<<<< HEAD
 <nav class="main-nav">
 	<ul>
 		<li><a class="cd-signin" href="#0">Sign in</a>
@@ -23,7 +24,17 @@
 </div>
  -->
 <%= link_to_modal "Modal Form", "#form-modal", :class => "button" %>
+=======
+<div id="form" style="display:none">
+<%= form_tag('/businesses/' + @business['id'] + '/jobs', method: 'post') do %>
+<%= label_tag(:position, "JOB POSITION:")%>
+<%= text_field_tag(:position) %>
+<%= submit_tag("submit") %>
+<% end %>
+</div>
+>>>>>>> tuesday
 
+<%= link_to_modal "Form", "#form", :class => "button" %>
 
 <h1><%= @business['name'] %></h1>
 <% @employees.each do |employee| %>
