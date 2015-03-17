@@ -31,7 +31,9 @@
 		<%=	biz['neighborhoods'] %>
 	<% end %>
 
-	<h3><%= phone.gsub('+', '') %></h3>
+	<% if phone %>
+		<h3>	<%= phone.gsub('+', '') %></h3>
+	<% end %>
 
 	<% if biz['categories'] %>
 		<%=	biz['categories'] %>
