@@ -15,7 +15,6 @@
 <% end %> -->
 
 <% biz_array = [] %>
-<% neigh_array = [] %>
 
 <% @parsed['businesses'].each do |biz| %>
 
@@ -30,23 +29,11 @@
 	<%= location['state_code'] %>
 	<%=	location['postal_code'] %>
 	
-	<% if location['neighborhoods'] %>
-		<% neigh_array << location['neighborhoods'][0] %>
-	<% end %>
-	
-	<% if location['neighborhoods'] %>
-		<% neigh_array << location['neighborhoods'][1] %>
+	<% if biz['neighborhoods'] %>
+		<%=	biz['neighborhoods'] %>
 	<% end %>
 
-	<% if location['neighborhoods'] %>
-		<% neigh_array << location['neighborhoods'][2] %>
-	<% end %>
 
-	<%= neigh_array.compact.join(', ') %>
-	<% neigh_array = []%>
-
-
-	
 	<h3><%= phone.gsub('+', '') %></h3>
 
 	<% biz_array << biz['categories'][0][0] %>
