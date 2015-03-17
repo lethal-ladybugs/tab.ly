@@ -14,8 +14,6 @@
 
 <% end %> -->
 
-<% biz_array = [] %>
-
 <% @parsed['businesses'].each do |biz| %>
 
 	<p><a href="/businesses/<%=biz['id']%>"><%=biz['name']%></a></p>
@@ -33,22 +31,13 @@
 		<%=	biz['neighborhoods'] %>
 	<% end %>
 
-
 	<h3><%= phone.gsub('+', '') %></h3>
 
-	<% biz_array << biz['categories'][0][0] %>
-	
-	<% if biz['categories'][1] %>
-		<% biz_array << biz['categories'][1][0] %>
+	<% if biz['categories'] %>
+		<%=	biz['categories'] %>
 	<% end %>
 
-	<% if biz['categories'][2] %>
-		<% biz_array << biz['categories'][2][0] %>
-	<% end %>
 
-	<%= biz_array.join(', ') %>
-	<% biz_array = []%>
-	
 	<a href="/businesses/<%=biz['id']%>"><button>Go!</button></a>
 
 <% end %>

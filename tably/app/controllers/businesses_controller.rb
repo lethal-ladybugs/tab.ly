@@ -20,6 +20,15 @@ class BusinessesController < ApplicationController
 					end
 				business['neighborhoods'] = business['neighborhoods'].join(', ')
 			end
+
+			if business['categories']
+					biz_array = []
+					business['categories'].each do |category|
+						biz_array << category[0] 
+				end
+				business['categories'] = biz_array.join(', ')
+			end
+
 		end
 
 		@businesses = Business.all
