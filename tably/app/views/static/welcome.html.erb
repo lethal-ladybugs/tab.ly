@@ -6,17 +6,36 @@
 	</div>
 
 <%end%>
+	<div id='main-form' class='pure-u-1-1'>
+	<div id="outer-form">
+	<div id="inner-form">
+		<h5>Support people who helped you </h5>
+		<h5>by giving them a good review</h5>
 
-	<h1>Welcome!</h1>
+		<%= form_tag '/businesses', :method => 'GET', :id => 'search-form', class:'pure-form' do %>
 
-	<%= form_tag '/businesses', :method => 'GET', :id => 'search-form' do %>
+		  <%= text_field(:business, :name, :placeholder => "Business Name", class:'all_inputs' )%><br>
 
-	<%= label_tag(:name, "Business Name")%>
-  <%= text_field(:business, :name, :placeholder => "Please input a business name" )%><br>
+		  <%= text_field(:business, :zipcode, :placeholder => "Zip Code",class:'all_inputs' )%><br>
+		  <%= submit_tag "Go!" %>
 
-  <%= label_tag(:zipcode, "Zip Code")%>
-  <%= text_field(:business, :zipcode, :placeholder => "Please input a zip code" )%><br>
-  <%= submit_tag "Go!" %>
+		<% end %>
+	</div>
+	</div>
+	</div>
 
-<% end %>
+	<div class="how pure-g">
+		<div class="first pure-u-md-1-3 pure-u-1-2 text-center">
+			<img src="" alt="" height='200px' width='200px'>
+			<p>Loved who helped you today?</p>
+		</div>
+		<div class="second pure-u-md-1-3 pure-u-1-2 text-center">
+			<img src="" alt="" height='200px' width='200px'>
+			<p>Find them by where they work.</p>
+		</div>
+		<div class="third pure-u-md-1-3 pure-u-1-1 text-center">
+			<img src="" alt="" height='200px' width='200px'>
+			<p>Give them a good review here!</p>
+		</div>
+	</div>
  

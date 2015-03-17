@@ -1,1 +1,37 @@
 
+
+.columns{
+	height: 104px;
+}
+
+.footer-icons{
+	font-size: 2em;
+	margin: .5em;
+}
+
+#icon-div{
+	bottom: 0;
+	position: absolute;
+	width: inherit;
+}
+#footer{
+	margin-top: 2em;
+	position: relative;
+	background-color: #D8D8D8;
+}
+
+#facebook{
+	color: #38568E;
+}
+
+#twitter{
+	color: #30A8DD;
+}
+
+#instagram{
+	color: #1D5B81;
+}
+
+#pinterest{
+	color: #BE2127;
+}
