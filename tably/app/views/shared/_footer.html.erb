@@ -1,7 +1,7 @@
 
-<div class="footer" id='footer'>
+<div class="pure-g" id='footer'>
 	
-	<div class="links col3">
+	<div class="links pure-u-md-1-3 pure-u-1">
 		<ul class="link-list">
 			<li><a href="" class="about">About Us</a></li>
 			<li><a href="" class="faqs">FAQs</a></li>
@@ -9,17 +9,19 @@
 			<li><a href="" class="privacy">Privacy Policy</a></li>
 		</ul>
 	</div>
-	<div class="news col3">
+	<div class="news pure-u-md-1-3 pure-u-1 text-center">
 		<p>Sign up for our newsletter!</p>
-		<input type="text" class="news_inp">
+		<input type="text" class="news_inp block center">
 		<button class="news_signup">Sign Up </button>
 	</div>
 	
-	<div class="social col3">
-		<%= fa_icon "twitter" %>
-		<%= fa_icon "facebook" %>
-		<%= fa_icon "instagram" %>
-		<%= fa_icon "pinterest" %>
+	<div id="" class="social pure-u-md-1-3 pure-u-1 text-center columns">
+	<div id="icon-div" class='text-center'>
+		<%= fa_icon "facebook", id:'facebook', class:'footer-icons' %>
+		<%= fa_icon "twitter", id:'twitter', class:'footer-icons' %>
+		<%= fa_icon "instagram", id:'instagram', class:'footer-icons' %>
+		<%= fa_icon "pinterest", id:'pinterest',class:'footer-icons' %>
+	</div>
 	</div>
 
 </div>

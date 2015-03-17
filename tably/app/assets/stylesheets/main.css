@@ -1,5 +1,42 @@
 
-.col3 {
-	width: 33%;
+ul{
+	list-style: none;
+}
+
+.float-right{
+	float: right;
+	margin-right: .4em;
+}
+.float-left{
 	float: left;
+	margin-left: .4em;
+}
+
+.inline-block{
+	display: inline-block;
+}
+.block{
+	display: block;
+}
+.container{
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+.all_inputs{
+	border-radius: .4em;
+	appearance: none;
+  	box-shadow: none;
+}
+
+.text-center{
+	text-align: center;
+}
+
+a{
+	text-decoration: none;
+}
+
+.center{
+	margin: 0 auto;
 }

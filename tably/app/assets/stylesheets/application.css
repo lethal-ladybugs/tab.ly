@@ -11,9 +11,10 @@
  * file per style scope.
  *
  *= require normalize
+ *= require purecss
+ *= require font-awesome
  *= require main
  *= require footer
- *= require font-awesome
  *= require_tree .
  *= require_self
  */

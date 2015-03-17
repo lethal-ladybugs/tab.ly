@@ -1,0 +1,29 @@
+#main-form{
+	margin: 1em 0 2em 0;
+	height: 500px;
+	background-image: url(http://upload.wikimedia.org/wikipedia/commons/4/42/Barista_COSTA_COFFEE.JPG);
+	background-repeat: none;
+	background-size: cover;
+	position: relative;
+}
+
+/*#main-form::after{
+	content: 'somthings';
+	border-bottom: 4px solid black;
+	margin-top: 2em;
+}*/
+
+#outer-form{
+	position: absolute;
+	width: 100%;
+	height: 40%;
+	bottom: 0;
+	background-color: rgba(0,0,0,.7);
+}
+#inner-form{
+	position: relative;
+	display: inline-block;
+	/*width: 50%;*/
+	color: white;
+	margin: 0 auto;
+}
