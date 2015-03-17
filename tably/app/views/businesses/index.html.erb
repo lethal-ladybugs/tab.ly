@@ -24,13 +24,19 @@
 
 	<%= location['address'][0] %>
 	<%= location['city'] %>
-	<%	if location['neighborhoods'] %>
-		<%= location['neighborhoods'][0] %>
-	<% end %>
+	<%= location['state_code'] %>
 	<%=	location['postal_code'] %>
+	
+	<% if biz['neighborhoods'] %>
+		<%=	biz['neighborhoods'] %>
+	<% end %>
+
 	<h3><%= phone.gsub('+', '') %></h3>
 
-	<%= biz['categories'][0][0] %>
+	<% if biz['categories'] %>
+		<%=	biz['categories'] %>
+	<% end %>
+
 
 	<a href="/businesses/<%=biz['id']%>"><button>Go!</button></a>
 

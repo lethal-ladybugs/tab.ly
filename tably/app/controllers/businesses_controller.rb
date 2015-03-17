@@ -13,6 +13,27 @@ class BusinessesController < ApplicationController
 		location = params['business']['zipcode'] || 'New York'
 		results = Yelp.client.search(location, search_params).to_json
 		@parsed = JSON.parse(results)
+
+		@parsed['businesses'].each do |business|
+
+			if business['location']['neighborhoods']
+					business['neighborhoods'] = []
+					business['location']['neighborhoods'].each do |neighborhood|
+						business['neighborhoods']	<< neighborhood
+					end
+				business['neighborhoods'] = business['neighborhoods'].join(', ')
+			end
+
+			if business['categories']
+					biz_array = []
+					business['categories'].each do |category|
+						biz_array << category[0] 
+				end
+				business['categories'] = biz_array.join(', ')
+			end
+
+		end
+
 		@businesses = Business.all
 	end
 
@@ -21,5 +42,7 @@ class BusinessesController < ApplicationController
 		@business = JSON.parse(results)
 		@employees = Job.where(yelp_id: params[:id])
 	end
+
+
 
 end
