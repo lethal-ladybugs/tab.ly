@@ -1,7 +1,6 @@
 <h3>Add employee/job</h3>
 
 
-<%= link_to_modal "Modal Form", "#form-modal", :class => "button" %>
 
 <div id="form" style="display:none">
 <%= form_tag('/businesses/' + @business['id'] + '/jobs', method: 'post') do %>
