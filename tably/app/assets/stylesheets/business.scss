@@ -1,3 +1,36 @@
 // Place all the styles related to the business controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+h1 {
+	color: gray;
+}
+img {
+	height: 160px;
+	width: 160px;
+	border-radius: 10px;
+	margin-bottom: 20px;
+}
+
+a {
+	color: black;
+}
+
+p {
+	color: gray;
+}
+
+.neighborhood {
+	margin-bottom: 20px;
+
+}
+
+.button-large {
+	width: 12em;
+	border-radius: 10px;
+	margin-top: 20px;
+}
+
+.no-neighb {
+	margin-top: 40px;
+}

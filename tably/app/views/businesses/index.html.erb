@@ -1,5 +1,5 @@
 
-<h1>Businesses</h1>
+<h1>Search</h1>
 <!-- 
 <% if @businesses %>
 
@@ -14,33 +14,45 @@
 
 <% end %> -->
 
-<% @parsed['businesses'].each do |biz| %>
+<div class="pure-g">
+		<% @parsed['businesses'].each do |biz| %>
 
-	<p><a href="/businesses/<%=biz['id']%>"><%=biz['name']%></a></p>
-	<a href="/businesses/<%=biz['id']%>"><img src="<%=biz['image_url']%>" alt=""></a>
-
-	<% location = biz['location'] %>
-	<% phone = biz['display_phone'] %>
-
-	<%= location['address'][0] %>
-	<%= location['city'] %>
-	<%= location['state_code'] %>
-	<%=	location['postal_code'] %>
-	
-	<% if biz['neighborhoods'] %>
-		<%=	biz['neighborhoods'] %>
-	<% end %>
-
-	<h3><%= phone.gsub('+', '') %></h3>
-
-	<% if biz['categories'] %>
-		<%=	biz['categories'] %>
-	<% end %>
+			<div class="pure-u-1-3">
+					<a href="/businesses/<%=biz['id']%>"><img src="<%=biz['image_url']%>" alt=""></a>
+			</div>
+				
+			<div class="pure-u-1-3">
+					<h3 class="name"><a href="/businesses/<%=biz['id']%>"><%=biz['name']%></a></h3>
+					<% if biz['categories'] %>
+						<p class="cateogory"><%=biz['categories'] %></p>
+					<% end %>
+			</div>
 
 
-	<a href="/businesses/<%=biz['id']%>"><button>Go!</button></a>
+			<div class="pure-u-1-3">
+				<% location = biz['location'] %>
+				<% phone = biz['display_phone'] %>
+					<% if biz['neighborhoods'] %>
+						<div class="neighborhood">
+							<br><%=	biz['neighborhoods'] %>
+						</div>
+					<% end %>
+				<%= location['address'][0] %>
+				<%= location['city'] %>
+				<br><%= location['state_code'] %>
+				<%=	location['postal_code'] %>
+				
+				<br><%= phone.gsub('+', '') %><br>
 
-<% end %>
+				<% if biz['neighborhoods'] %>
+					<a href="/businesses/<%=biz['id']%>"><button class="button-large pure-button">Go!</button></a>
+				<% else %>
+					<a href="/businesses/<%=biz['id']%>"><button class="button-large pure-button no-neighb">Go!</button></a>
+				<% end %>
+			</div>
+
+		<% end %>
+</div>
 
 
 
