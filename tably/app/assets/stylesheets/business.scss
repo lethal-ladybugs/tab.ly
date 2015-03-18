@@ -6,13 +6,20 @@ h1 {
 	color: gray;
 	font-style: italic;
 }
-img {
+.yelp-photo {
 	height: 160px;
 	width: 160px;
 	border-radius: 10px;
 	margin-bottom: 20px;
+	-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+	box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }
-
+hr {
+	display: block;
+	color: gray;
+	width: 100%;
+}
 a {
 	color: black;
 }
@@ -23,16 +30,26 @@ p {
 
 .neighborhood {
 	margin-bottom: 20px;
-	line-height: 10px;
+	line-height: 19px;
 
 }
 
+.no-neighbhor-address {
+	line-height: 23px;
+}
+
+/*.no-neighb-button {
+	line-height: 20px;
+}*/
+
+.button-div {
+	margin-top: 25px;
+}
 .button-large {
 	width: 12em;
 	border-radius: 10px;
 	margin-top: 20px;
-}
-
-.no-neighb {
-	margin-top: 40px;
+	-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+	box-shadow: 5px 5px 2px 0px rgba(0,0,0,0.75);
 }

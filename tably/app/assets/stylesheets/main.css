@@ -3,6 +3,13 @@ ul{
 	list-style: none;
 }
 
+hr {
+	display: block;
+	color: gray;
+	width: 100%;
+	opacity: .3;
+}
+
 .float-right{
 	float: right;
 	margin-right: .4em;
@@ -33,7 +40,7 @@ ul{
 	text-align: center;
 }
 
-a{
+a {
 	text-decoration: none;
 }
 
