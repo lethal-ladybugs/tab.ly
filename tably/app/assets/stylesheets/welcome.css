@@ -7,12 +7,6 @@
 	position: relative;
 }
 
-/*#main-form::after{
-	content: 'somthings';
-	border-bottom: 4px solid black;
-	margin-top: 2em;
-}*/
-
 #outer-form{
 	position: absolute;
 	width: 100%;
@@ -25,8 +19,11 @@
 	position: relative;
 	color: #D5DFE9;
 	height: 100%;
+	width: 100%;
 }
 
 #howItWorks{
 	margin-left: 5%;
 }
+
+6142133640
