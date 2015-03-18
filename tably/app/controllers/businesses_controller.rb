@@ -7,7 +7,8 @@ class BusinessesController < ApplicationController
 			limit: 10,
 			term: params['business']['name'],
 			category_filter: 'restaurants,bars,cafes,icecream',
-			radius_filter: 30000
+			radius_filter: 10000,
+			sort: 1
 		}
 		params['business']['zipcode'] = nil if params['business']['zipcode'] == ''
 		location = params['business']['zipcode'] || 'New York'
