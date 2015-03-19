@@ -1,14 +1,14 @@
 class BusinessesController < ApplicationController
 
 	def index
-		terms = params['business']['name'].split.join(',')
+		terms = params['business']['name'].split.join(' ')
 		
 		search_params = {
 			limit: 10,
 			term: params['business']['name'],
 			category_filter: 'restaurants,bars,cafes,icecream',
 			radius_filter: 10000,
-			sort: 1
+			sort: 0
 		}
 		params['business']['zipcode'] = nil if params['business']['zipcode'] == ''
 		location = params['business']['zipcode'] || 'New York'
