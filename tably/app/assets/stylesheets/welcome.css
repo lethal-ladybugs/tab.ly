@@ -1,3 +1,23 @@
+#header{
+	padding-top: 10px;
+	height: 100px;
+}
+
+#search-header{
+	margin-top: 15px;
+	text-align: center;
+}
+
+#search-header input{
+	margin-bottom: 20px;
+	padding: 5px;
+	border: 1px solid gray;
+}
+
+#search-header a{
+	margin-left: 20px;
+}
+
 #main-form{
 	margin: 1em 0 2em 0;
 	height: 700px;
@@ -22,9 +42,14 @@
 }
 
 #inner-form{
+	margin-top: 1em;
 	position: relative;
 	color: #D5DFE9;
 	height: 100%;
+}
+
+#inner-form h1{
+	color: white;
 }
 
 #howItWorks{

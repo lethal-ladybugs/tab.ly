@@ -1,19 +1,21 @@
 <div id='main-form' class='pure-u-1-1'>
 	<div id="outer-form">
 	<div id="inner-form" class='text-center'>
-	<div class="absolute-center">
+	<!-- <div class="absolute-center"> -->
 		<h1>support people who helped you </h1>
 		<h1>by giving them a good review</h1>
 
-		<%= form_tag '/businesses', :method => 'GET', :id => 'search-form', class:'' do %>
+		<%= form_tag '/businesses', :method => 'GET', :id => 'search-form', class:'pure-form pure-form-stacked' do %>
+		 <div class="pure-g">
+		  <%= text_field(:business, :name, :placeholder => "Business Name", class:'all_inputs pure-u-1-2' )%><br>
 
-		  <%= text_field(:business, :name, :placeholder => "Business Name", class:'all_inputs' )%><br>
-
-		  <%= text_field(:business, :zipcode, :placeholder => "Zip Code",class:'all_inputs' )%><br>
-		  <%= submit_tag "Go!", class: 'pure-button button-large'%>
-
+		  <%= text_field(:business, :zipcode, :placeholder => "Zip Code",class:'all_inputs pure-u-1-2' )%><br>
+		  </div>
+		  <div class="pure-g">
+		  <%= submit_tag "Go!", class: 'pure-button button-large center'%>
+		  </div>
 		<% end %>
-	</div>
+	<!-- </div> -->
 	</div>
 	</div>
 	</div>
