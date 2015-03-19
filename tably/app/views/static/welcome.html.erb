@@ -7,9 +7,12 @@
 
 		<%= form_tag '/businesses', :method => 'GET', :id => 'search-form', class:'pure-form pure-form-stacked' do %>
 		 <div class="pure-g">
-		  <%= text_field(:business, :name, :placeholder => "Business Name", class:'all_inputs pure-u-1-2' )%><br>
-
-		  <%= text_field(:business, :zipcode, :placeholder => "Zip Code",class:'all_inputs pure-u-1-2' )%><br>
+		 <div class="pure-u-1-2">
+		  <%= text_field(:business, :name, :placeholder => "Business Name", class:'all_inputs pure-u-23-24 float-right' )%><br>
+		</div>
+		<div class="pure-u-1-2">
+		  <%= text_field(:business, :zipcode, :placeholder => "Zip Code",class:'all_inputs pure-u-23-24 float-left' )%><br>
+		  </div>
 		  </div>
 		  <div class="pure-g">
 		  <%= submit_tag "Go!", class: 'pure-button button-large center'%>
