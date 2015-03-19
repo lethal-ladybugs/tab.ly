@@ -10,8 +10,16 @@
 		<div class="float-right">
 			<input type="text" id="search_inp" placeholder='Search for business' class='block'>
 
+
+<% if current_user %>
+		<%= link_to "Log Out", '/sessions', method: :delete, :id => 'log-out-button' %><br>
+<%end%>
+
+<% unless current_user %>
 			<a href="/sessions/new" class="sign_in">Sign In</a>
 			<a href="/users/new" class="sign_up">Sign Up</a>
+<% end %>	
+		
 		</div>
 	</div>
 </div>
