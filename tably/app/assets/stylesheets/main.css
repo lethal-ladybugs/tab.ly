@@ -39,9 +39,9 @@ ul{
 }
 
 .all_inputs{
-	border-radius: .4em;
-	appearance: none;
-  	box-shadow: none;
+	/*border-radius: .4em;*/
+	padding: 5px;
+	width: 12em;
 }
 
 .text-center{

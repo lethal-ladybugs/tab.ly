@@ -1,4 +1,4 @@
-<div class="pure-g">
+<div id='header' class="pure-g">
 
 	<div id='header-img' class='pure-u-1-2'>
 		<div class="float-left">
@@ -6,12 +6,20 @@
 		</div>
 	</div>
 
-	<div class='pure-u-1-2' id='header'>
+	<div class='pure-u-1-2' id='search-header'>
 		<div class="float-right">
 			<input type="text" id="search_inp" placeholder='Search for business' class='block'>
 
+
+		<% if current_user %>
+			<%= link_to "Log Out", '/sessions', method: :delete, :id => 'log-out-link' %><br>
+		<%end%>
+
+		<% unless current_user %>
 			<a href="/sessions/new" class="sign_in">Sign In</a>
 			<a href="/users/new" class="sign_up">Sign Up</a>
+		<% end %>	
+		
 		</div>
 	</div>
 </div>
