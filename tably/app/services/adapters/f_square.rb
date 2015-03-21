@@ -17,9 +17,6 @@ class F_square
 
   private
   def normalize_response(response)
-  	# normalized = {
-
-  	# }
   	venues = []
   	response['response']['venues'].each do |venue|
   		each = {
@@ -36,8 +33,6 @@ class F_square
   def getPhoto(venue)
     
     id = venue["id"]
-
-    binding.pry
 
   	business = Business.find_by({fs_id: id})
 
@@ -60,7 +55,6 @@ class F_square
         address: venue['location']['address'],
         phone: venue['contact']['formattedPhone']
       })
-      binding.pry
 	  	new_b.photo
 	  end
   end
