@@ -2,8 +2,10 @@
 	<div id="outer-form">
 	<div id="inner-form" class='text-center'>
 	<!-- <div class="absolute-center"> -->
-		<h1>support people who helped you </h1>
-		<h1>by giving them a good review</h1>
+		<div id="middle-text">
+		<p>support people who helped you <br>
+		by giving them a good review</p>
+		</div>
 
 		<%= form_tag '/businesses', :method => 'GET', :id => 'search-form', class:'pure-form pure-form-stacked' do %>
 		 <div class="pure-g">
