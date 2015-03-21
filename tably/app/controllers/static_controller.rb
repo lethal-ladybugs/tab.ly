@@ -1,6 +1,7 @@
 class StaticController < ApplicationController
 
 	def welcome
-    end
+		@user = User.new
+  end
 
 end
