@@ -1,5 +1,6 @@
-		<h1>Create Job</h1>
-		<%= form_tag('/businesses/' + @business_id + '/jobs', method: 'post') do %>
+<h1>Create Job</h1>
+
+		<%= form_tag('/businesses/', method: 'post') do %>
 		<%= label_tag(:position, "JOB POSITION:")%>
 		<%= text_field_tag(:position) %>
 		<%= submit_tag("submit") %>

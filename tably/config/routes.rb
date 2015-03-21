@@ -19,7 +19,7 @@ get 'yelp' => 'tests#show'
 
   delete '/sessions' => 'sessions#destroy'
 
-
+  get 'signupin' => 'tests#signupin'
 
 
 

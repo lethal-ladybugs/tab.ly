@@ -36,7 +36,7 @@ class SessionsController < ApplicationController
    	  user.save
     end
 
-    redirect_to root_url
+    redirect_to(:back)
   
   end
 
