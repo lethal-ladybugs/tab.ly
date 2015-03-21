@@ -28,6 +28,14 @@
 	position: relative;
 }
 
+
+#middle-text p{
+	padding-top: 20px;
+	color: white;
+	line-height: 1.5em;
+	font-size: 20px;
+}
+
 .text-color {
 	color: black;
 }
