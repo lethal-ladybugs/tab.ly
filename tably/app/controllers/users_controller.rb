@@ -15,6 +15,7 @@ class UsersController < ApplicationController
 
 	def create 
 
+
 		@user = User.new(user_params)
 		# @user.password = params[:user][:password]
 		# @user.password_confirmation = params[:user][:password_confirmation]
@@ -30,11 +31,16 @@ class UsersController < ApplicationController
 				@user.session_token = token 
 				@user.save 
 
-			redirect_to root_url 
+			# respond_to do |format| 
+			# 	format.json { render :root_url }
 
+				redirect_to root_url	
+			# end
 		else 
-
-		 render :new
+				render :new
+			# respond_to do |format| 
+			# 	format.json {render json: @user.errors.messages}
+			# end
 
 		end
 	end

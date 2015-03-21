@@ -2,7 +2,7 @@
 
 	<div id='header-img' class='pure-u-1-2'>
 		<div class="float-left">
-			<img src="" alt="" width='100px' height='100px'>
+			<a href="/"><img src="/assets/logo_final.png" alt="" width='100px' height='100px'></a>
 		</div>
 	</div>
 
@@ -12,12 +12,65 @@
 
 
 		<% if current_user %>
+			
 			<%= link_to "Log Out", '/sessions', method: :delete, :id => 'log-out-link' %><br>
 		<%end%>
 
+		
+
 		<% unless current_user %>
-			<a href="/sessions/new" class="sign_in">Sign In</a>
-			<a href="/users/new" class="sign_up">Sign Up</a>
+
+				<div id="form" style="display:none">
+			
+				<div id="signup-form">
+				<h1>Create a new account</h1>
+				
+				<%= form_tag '/users', :method => 'CREATE', multipart: true, :id => 'new-user-form' do %>
+
+ 						 <%= label_tag(:avatar, "Your Pic")%>
+  					<%= file_field(:user, :avatar)%><br>
+
+  					<%= label_tag(:f_name, "First Name")%>
+  					<%= text_field(:user, :f_name)%><br>
+
+ 						<%= label_tag(:l_name, "Last Name")%>
+  					<%= text_field(:user, :l_name)%><br>
+
+  					<%= label_tag(:email, "Email")%>
+  					<%= email_field(:user, :email)%><br>
+
+  					<%= label_tag("Password")%> 
+  					<%= password_field(:user, :password)%><br>
+
+  					<%= label_tag("Confirm Password")%>
+  					<%= password_field(:user, :password_confirmation)%><br>
+
+  					<%= submit_tag "Signup" %>
+						<% end %>
+					</div>
+
+				<div id="signin-form">
+				<h1>Log in</h1>
+
+						<%= form_tag sessions_path, method: 'post' do %>
+
+						 	<%= label_tag(:email, "Email")%>
+  						
+  						<%= email_field(:user, :email)%><br>
+
+ 							<%= label_tag(:user, "Password")%>
+  						
+  						<%= password_field(:user, :password)%><br>
+
+  						<%= submit_tag "Login" %>
+						<% end %>
+				</div>
+				
+				</div>
+				<%= link_to_modal "Signup", "#form", :class => "button" %>
+				<%= link_to_modal "Login", "#form", :class => "button" %>
+				
+
 		<% end %>	
 		
 		</div>
