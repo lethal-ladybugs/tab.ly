@@ -1,8 +1,9 @@
 
-<% @parsed['response']['venues'].each do |business| %>
-<h3><%= business['name'] %></h3>
-<h3><%= business['location']['address'] %></h3>
-<h3><%= business['contact']['formattedPhone'] %></h3>
+<% @parsed.each do |business| %>
+<img src="<%= business[:photo] %>" alt="">
+<h3><%= business[:name] %></h3>
+<h3><%= business[:address]%></h3>
+<h3><%= business[:phone] %></h3>
 <hr>
 <% end %>
 
