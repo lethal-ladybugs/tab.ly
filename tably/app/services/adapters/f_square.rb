@@ -31,8 +31,6 @@ class F_square
   		venues << each
   	end
   	venues
-  	# binding.pry
-    # Create hash from response
   end
 
   def getPhoto(id)
