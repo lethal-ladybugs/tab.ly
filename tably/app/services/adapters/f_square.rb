@@ -20,6 +20,7 @@ class F_square
   	venues = []
   	response['response']['venues'].each do |venue|
   		each = {
+        fs_id: venue["id"],
   			name: venue['name'],
   			address: venue['location']['address'],
   			phone: venue['contact']['formattedPhone'],

@@ -10,8 +10,8 @@ class BusinessesController < ApplicationController
 	end
 
 	def show
-		@business = Business.find_by({business_id: params[:id]})
-		binding.pry
+		@business = Business.find_by({fs_id: params[:id]})
+		@employees = @business.jobs
 	end
 
 end
