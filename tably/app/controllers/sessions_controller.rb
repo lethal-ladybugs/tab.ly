@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
 				
 				user.save
 	
-				redirect_to root_url 
+				redirect_to(:back)
 				
 			else 
 			  render :new 

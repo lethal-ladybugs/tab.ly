@@ -1,4 +1,30 @@
-<h3>Add employee/job</h3>
+
+<div id="rate" style="display:none">
+	<img id="dislike" src="/assets/x_unchecked.png">
+	<img id="like" src="/assets/unchecked_heart.png">
+	<%= radio_button_tag(:button, true) %>
+	<%= label_tag(:like_button, "Like Me?") %>
+	<%= radio_button_tag(:button, false) %>
+	<%= label_tag(:dislike_button, "Don't like") %>
+	<button class="pure-button pure-button-primary">SUBMIT</button>
+<!-- 	<%= submit_tag("SUBMIT") %>
+ -->	
+</div>
+
+<%= link_to_modal "RATE EMPLOYEE", "#rate",  :class => "button-secondary pure-button" %>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6,11 +32,12 @@
 <%= form_tag('/businesses/' + @business[:fs_id] + '/jobs', method: 'post') do %>
 <%= label_tag(:position, "JOB POSITION:")%>
 <%= text_field_tag(:position) %>
+<h1><%= @business[:name] %></h1>
 <%= submit_tag("submit") %>
 <% end %>
 </div>
 
-<%= link_to_modal "Form", "#form", :class => "button" %>
+<%= link_to_modal "I work here!", "#form",  :class => "button-secondary pure-button" %>
 
 <h1><%= @business[:name] %></h1>
 <% @employees.each do |employee| %>

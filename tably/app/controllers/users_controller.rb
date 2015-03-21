@@ -33,8 +33,7 @@ class UsersController < ApplicationController
 
 			# respond_to do |format| 
 			# 	format.json { render :root_url }
-
-				redirect_to root_url	
+				redirect_to(:back)	
 			# end
 		else 
 				render :new
