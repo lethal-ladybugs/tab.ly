@@ -3,12 +3,10 @@ class BusinessesController < ApplicationController
 	def index
 		terms = params['business']['name'].split.join('+')
 		params['business']['zipcode'] = nil if params['business']['zipcode'] == ''
-
 		# added the extra .split.join to location so it will function with a neighborhood along with postal code.
 		location = params['business']['zipcode'].split.join('+') || 'New+York+City'
-		results = HTTParty.get('https://api.foursquare.com/v2/venues/search?client_id=M33X4KUQHS41MLWGZGNQVBOFGU3HOZIVJDXBV5YNR2NZARDB&client_secret=IE3YZZUOE34UP1HIO2ZQC1KGZTQAXQN3HUXUW2XVDO2JGBYR&near=' + location + '&query=' + terms + '&v=20130815&intent=browse&radius=1000').to_json
-		@parsed = JSON.parse(results)
 
+		@parsed = F_square.new("something").get(location, terms)
 	end
 
 end
