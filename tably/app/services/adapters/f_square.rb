@@ -36,15 +36,24 @@ class F_square
   end
 
   def getPhoto(id)
-  	conn = Faraday.new(url: "https://api.foursquare.com/")
-    response = conn.get("v2/venues/#{id}/photos?client_id=M33X4KUQHS41MLWGZGNQVBOFGU3HOZIVJDXBV5YNR2NZARDB&client_secret=IE3YZZUOE34UP1HIO2ZQC1KGZTQAXQN3HUXUW2XVDO2JGBYR&limit=1&v=20130815")
-    photo_obj = JSON.parse response.body
-    if urls = photo_obj["response"]["photos"]["items"][0]
-    	urls = photo_obj["response"]["photos"]["items"][0]
-  		url = urls["prefix"] + "200x200" + urls["suffix"]
+
+  	photo = Photo.find_by({business_id: id})
+
+  	if photo
+  		url = photo.url
   	else
-  		urls = 'error'
-  	end
+	  	conn = Faraday.new(url: "https://api.foursquare.com/")
+	    response = conn.get("v2/venues/#{id}/photos?client_id=M33X4KUQHS41MLWGZGNQVBOFGU3HOZIVJDXBV5YNR2NZARDB&client_secret=IE3YZZUOE34UP1HIO2ZQC1KGZTQAXQN3HUXUW2XVDO2JGBYR&limit=1&v=20130815")
+	    photo_obj = JSON.parse response.body
+	    if urls = photo_obj["response"]["photos"]["items"][0]
+	    	urls = photo_obj["response"]["photos"]["items"][0]
+	  		url = urls["prefix"] + "200x200" + urls["suffix"]
+	  	else
+	  		url = 'error'
+	  	end
+	  	new_p = Photo.create({business_id: id, url: url})
+	  	url
+	  end
   end
 
   def handle_error(response)
