@@ -20,11 +20,16 @@
 
 #main-form{
 	margin: 1em 0 2em 0;
-	height: 700px;
-	background-image: url(http://upload.wikimedia.org/wikipedia/commons/4/42/Barista_COSTA_COFFEE.JPG);
+	height: 600px;
+	background-image: url('main_image.png');
+	background
 	background-repeat: none;
 	background-size: cover;
 	position: relative;
+}
+
+.text-color {
+	color: black;
 }
 
 /*#main-form::after{

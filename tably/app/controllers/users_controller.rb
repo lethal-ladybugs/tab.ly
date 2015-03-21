@@ -31,16 +31,16 @@ class UsersController < ApplicationController
 				@user.session_token = token 
 				@user.save 
 
-			respond_to do |format| 
-				format.json { render :root_url }
-			end
-		
-		else 
+			# respond_to do |format| 
+			# 	format.json { render :root_url }
 
-			respond_to do |format| 
-				format.json {render json: @user.errors.messages}
-			end
-		 
+				redirect_to root_url	
+			# end
+		else 
+				render :new
+			# respond_to do |format| 
+			# 	format.json {render json: @user.errors.messages}
+			# end
 
 		end
 	end
