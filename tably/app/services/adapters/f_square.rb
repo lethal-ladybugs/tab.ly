@@ -5,10 +5,9 @@ class F_square
     @url = url
   end
 
-  def get
-    conn = Faraday.new(url: "https://www.example.com/")
-    response = conn.get("v3/events/#{event_id(@url)}/?token=#{ENV['API_TOKEN']}")
-
+  def get(loc, terms)
+    conn = Faraday.new(url: "https://api.foursquare.com/")
+    response = conn.get("v2/venues/search?client_id=M33X4KUQHS41MLWGZGNQVBOFGU3HOZIVJDXBV5YNR2NZARDB&client_secret=IE3YZZUOE34UP1HIO2ZQC1KGZTQAXQN3HUXUW2XVDO2JGBYR&v=20130815&intent=browse&radius=1000&near=" + loc + '&query=' + terms)
     if response.success?
       normalize_response(JSON.parse response.body )
     else
@@ -18,6 +17,8 @@ class F_square
 
   private
   def normalize_response(response)
+  	response
+  	binding.pry
     # Create hash from response
   end
 
