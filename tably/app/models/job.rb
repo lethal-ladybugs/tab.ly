@@ -2,6 +2,7 @@ class Job < ActiveRecord::Base
 
 	has_many :ratings
 	belongs_to :user
+	belongs_to :business
 
 	enum status: [ :waiter, :bartender, :host, :barista ]
 	

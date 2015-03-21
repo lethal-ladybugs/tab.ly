@@ -1,7 +1,7 @@
 
 <% @parsed.each do |business| %>
 <img src="<%= business[:photo] %>" alt="">
-<h3><%= business[:name] %></h3>
+<h3> <a href="/businesses/<%=business[:fs_id]%>"><%= business[:name] %></a></h3>
 <h3><%= business[:address]%></h3>
 <h3><%= business[:phone] %></h3>
 <hr>

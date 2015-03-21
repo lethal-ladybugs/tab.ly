@@ -9,6 +9,11 @@ class BusinessesController < ApplicationController
 		@parsed = F_square.new("something").get(location, terms)
 	end
 
+	def show
+		@business = Business.find_by({fs_id: params[:id]})
+		@employees = @business.jobs
+	end
+
 end
 
 
