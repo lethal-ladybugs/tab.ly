@@ -10,7 +10,8 @@
 
 .like-buttons-container img {
 	margin: 0 auto;
-	display: inline-block;
+	cursor: pointer; 
+	cursor: hand;
 }
 
 #tiny-heart {
