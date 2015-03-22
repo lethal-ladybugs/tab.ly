@@ -7,23 +7,45 @@
 	<div class="link-bar">
 		<a href="#" class="back"></a>
 	</div>
-	<div class="image">
-		<%= image_tag @job.user.avatar.url(:medium) %>
-	</div>
-	<div class="desc">
-		<h3 class="name">Alex Deschamps</h3>
-			<p>Waiter</p>
-			<p class='ratings'><%= @job.rating_count %> Ratings</p>
-		<button class="review">Give me a Review</button>
+
+
+<div class="pure-g">
+	<div class="pure-u-1-2">
+		<div class="image">
+			<%= image_tag @job.user.avatar.url(:medium) %>
+		</div>
 	</div>
 
-	<%= form_tag('/businesses/' + @job.business_id.to_s + '/jobs/' + @job.id.to_s + '/ratings', method: 'post') do %>
-	<%= radio_button_tag(:button, true) %>
-	<%= label_tag(:like_button, "Like Me?") %>
-	<%= radio_button_tag(:button, false) %>
-	<%= label_tag(:dislike_button, "Don't like") %>
-	<%= submit_tag("SUBMIT") %>
-	<% end %>
+	<div class="pure-u-1-2">
+		<div class="desc">
+			<% if @job.user.fullname %>
+				<h2 class="name"> <%= @job.user.fullname %> </h2>
+				<h3 class="position"> <%= @job.position %> </h3>
+			<% else %>
+				<h2 class="name"> Alex Deschamps </h2>
+				<h3 class="position">Waiter</p></h3>
+			<% end %>
+				<p class='ratings'><%= @job.rating_count %><img id="tiny-heart" src="/assets/heart.png"><p> 
+		</div>
+
+		<div id="rate" style="display:none">
+			<%= image_tag @job.user.avatar.url(:medium), :class => "photo-inside-modal" %>
+			<div class="like-buttons-container">
+				<img id="dislike" src="/assets/x_unchecked.png">
+				<img id="like" src="/assets/unchecked_heart.png">
+			</div>
+			<%= form_tag('/businesses/' + @job.business_id.to_s + '/jobs/' + @job.id.to_s + '/ratings', method: 'post') do %>
+			<%= radio_button_tag(:button, true) %>
+			<%= label_tag(:like_button, "Like Me?") %>
+			<%= radio_button_tag(:button, false) %>
+			<%= label_tag(:dislike_button, "Don't like") %>
+			<button class="pure-button pure-button-primary submit-modal-button">Submit Review</button>
+		 <% end %>
+		</div>
+		<%= link_to_modal "Rate Me !", "#rate",  :class => "pure-button rate-me-button" %>
+	</div>
+
+</div>
 
 
 

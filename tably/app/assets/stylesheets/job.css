@@ -1,0 +1,38 @@
+
+.photo-inside-modal {
+	margin: 0 auto;
+	display: block;
+}
+
+.like-buttons-container {
+	text-align: center;
+}
+
+.like-buttons-container img {
+	margin: 0 auto;
+	display: inline-block;
+}
+
+#tiny-heart {
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	position: absolute;
+	top: 206px;
+	margin: 2px;
+}
+
+input[type="radio"], label {
+	display: none;
+}
+
+.submit-modal-button {
+	margin: 0 auto;
+	display: block;
+}
+
+.rate-me-button {
+	position: absolute;
+	top: 350px;
+	width: 150px;
+}
