@@ -6,8 +6,14 @@ class JobsController < ApplicationController
 	end
 
 	def create
-		new_job = Job.create({user_id: current_user.id, position: params["position"], business_id: params["id"]})
-		redirect_to '/businesses/' + params[:business_id] + '/jobs/' + new_job.id.to_s
+		check_job = Job.find_by({user_id: current_user.id, business_id: params["id"]})
+		if check_job
+			flash[:notice] = "You are already an employee here"
+			redirect_to '/businesses/' + params["id"].to_s
+		else
+			new_job = Job.create({user_id: current_user.id, position: params["position"], business_id: params["id"]})
+			redirect_to '/businesses/' + params[:business_id] + '/jobs/' + new_job.id.to_s
+		end
 		# redirect_to business_job_path(new_job.business, new_job)
 	end
 

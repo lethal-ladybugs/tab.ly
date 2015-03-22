@@ -36,7 +36,8 @@ class UsersController < ApplicationController
 				redirect_to(:back)	
 			# end
 		else 
-				render :new
+			flash[:notice] = "Incorrect Submission"
+			redirect_to new_user_path
 			# respond_to do |format| 
 			# 	format.json {render json: @user.errors.messages}
 			# end

@@ -2,6 +2,8 @@
 
 <h1>Signup!</h1>
 
+  <p> <%= flash[:notice] %> </p>
+
   <%= form_tag '/users', :method => 'CREATE', multipart: true, :id => 'new-user-form' do %>
 
   <% if @user.errors.messages %>

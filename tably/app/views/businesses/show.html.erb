@@ -12,14 +12,15 @@
 <%= link_to_modal "I work here!", "#form",  :class => "button-secondary pure-button" %>
 
 <h1><%= @business[:name] %></h1>
+<h2>Employees of this Business</h2>
+<div class="pure-g">
 <% @employees.each do |employee| %>
-<% array = [] %>
+	<div class="employee text-center pure-u-1-3">
+	<div class="image">
+			<%= image_tag employee.user.avatar.url(:medium) %>
+		</div>
 	<a href="/businesses/<%=employee.business[:id]%>/jobs/<%=employee.id%>"><h3><%=employee.user.fullname %></h3></a>
-		<% employee.ratings.each do |ratings| %>
-			<% if ratings.good == true %>
-				<% x = ratings.good %>
-				<% array.push(x) %>
-				<% end %>
-		<% end %>
-	<h3>RATING: <%= array.length %></h3>
+	<h3>RATING: <%= employee.rating_count %></h3>
+	</div>
 <% end %>
+</div>
