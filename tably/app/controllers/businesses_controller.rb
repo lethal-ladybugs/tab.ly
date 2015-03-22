@@ -6,7 +6,7 @@ class BusinessesController < ApplicationController
 		# added the extra .split.join to location so it will function with a neighborhood along with postal code.
 		location = params['business']['zipcode'].split.join('+') || 'New+York+City'
 
-		@parsed = F_square.new("something").get(location, terms)
+		@businesses = F_square.new("something").get(location, terms)
 	end
 
 	def show
