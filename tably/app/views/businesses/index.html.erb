@@ -1,9 +1,12 @@
 
 <% @parsed.each do |business| %>
-<img src="<%= business[:photo] %>" alt="">
+<a href="/businesses/<%=business[:fs_id]%>"><img src="<%= business[:photo] %>" alt=""></a>
 <h3> <a href="/businesses/<%=business[:fs_id]%>"><%= business[:name] %></a></h3>
 <h3><%= business[:address]%></h3>
 <h3><%= business[:phone] %></h3>
+<form action="/businesses/<%=business[:fs_id]%>">
+    <input type="submit" value='Go' class='button-large button'>
+</form>
 <hr>
 <% end %>
 
