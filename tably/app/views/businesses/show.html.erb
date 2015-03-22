@@ -1,6 +1,6 @@
 
 <div id="form" style="display:none">
-<%= form_tag('/businesses/' + @business[:fs_id] + '/jobs', method: 'post') do %>
+<%= form_tag('/businesses/' + @business[:id].to_s + '/jobs', method: 'post') do %>
 <%= label_tag(:position, "JOB POSITION:")%>
 <%= text_field_tag(:position) %>
 <%= hidden_field_tag(:id, @business.id) %>
@@ -14,7 +14,7 @@
 <h1><%= @business[:name] %></h1>
 <% @employees.each do |employee| %>
 <% array = [] %>
-	<a href="/businesses/<%=employee.business[:fs_id]%>/jobs/<%=employee.id%>"><h3><%=employee.user.fullname %></h3></a>
+	<a href="/businesses/<%=employee.business[:id]%>/jobs/<%=employee.id%>"><h3><%=employee.user.fullname %></h3></a>
 		<% employee.ratings.each do |ratings| %>
 			<% if ratings.good == true %>
 				<% x = ratings.good %>
