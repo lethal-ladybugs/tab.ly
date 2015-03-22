@@ -4,14 +4,20 @@
 
 h1 {
 	color: gray;
-	font-style: italic;
-}
+/*	font-style: italic;
+*/}
 
 .button-secondary {
 	 background: rgb(66, 184, 221);
 	 width: 10em;
 }
-.yelp-photo {
+
+.default-logo {
+	width: 200px;
+	height: 200px;
+	opacity: .3;
+}
+/*.yelp-photo {
 	height: 160px;
 	width: 160px;
 	border-radius: 10px;
@@ -19,7 +25,7 @@ h1 {
 	-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 	-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 	box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-}
+}*/
 hr {
 	display: block;
 	color: gray;
@@ -49,7 +55,7 @@ p {
 	width: 12em;
 	border-radius: 10px;
 	margin-top: 20px;
-	-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-	-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-	box-shadow: 5px 5px 2px 0px rgba(0,0,0,0.75);
+	/*-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);*/
+	/*box-shadow: 5px 5px 2px 0px rgba(0,0,0,0.75);*/
 }
