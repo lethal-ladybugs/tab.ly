@@ -12,20 +12,21 @@ h1 {
 	 width: 10em;
 }
 
+.bus-photo {
+	border-radius: 10px;
+}
+
 .default-logo {
 	width: 200px;
 	height: 200px;
 	opacity: .3;
 }
-/*.yelp-photo {
-	height: 160px;
-	width: 160px;
-	border-radius: 10px;
-	margin-bottom: 20px;
-	-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-	-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-	box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-}*/
+#spacing {
+	margin-left: 15px;
+}
+
+
+
 hr {
 	display: block;
 	color: gray;
@@ -52,10 +53,26 @@ p {
 	margin-top: 25px;
 }
 .button-large {
-	width: 12em;
-	border-radius: 10px;
+	width: 10em;
+	border-radius: 5px;
 	margin-top: 20px;
-	/*-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-	-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);*/
-	/*box-shadow: 5px 5px 2px 0px rgba(0,0,0,0.75);*/
+
+}
+
+.address-index {
+	margin: 20px auto;
+	text-align: center;
+	line-height: 30px;
+}
+
+.address-index p {
+	color: black;
+}
+
+.name-index {
+	font-size: 16px;
+	margin-top: 3em;
+}
+#counter {
+	color: black;
 }
