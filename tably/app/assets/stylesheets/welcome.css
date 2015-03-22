@@ -11,7 +11,7 @@
 #search-header input{
 	margin-bottom: 20px;
 	padding: 5px;
-	border: 1px solid gray;
+	/*border: 1px solid gray;*/
 }
 
 #search-header a{
@@ -67,4 +67,9 @@
 
 #howItWorks{
 	margin-left: 5%;
+}
+
+#new-user-form input{
+	margin-left: auto;
+	margin-right: auto;
 }
