@@ -33,6 +33,7 @@
 <%= form_tag('/businesses/' + @business[:fs_id] + '/jobs', method: 'post') do %>
 <%= label_tag(:position, "JOB POSITION:")%>
 <%= text_field_tag(:position) %>
+<%= hidden_field_tag(:id, @business.id) %>
 <h1><%= @business[:name] %></h1>
 <%= submit_tag("submit") %>
 <% end %>

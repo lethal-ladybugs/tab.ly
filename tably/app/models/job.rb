@@ -7,7 +7,7 @@ class Job < ActiveRecord::Base
 	enum status: [ :waiter, :bartender, :host, :barista ]
 	
 	def rating_count
-		all_ratings = Rating.where({job_id: self.id})
+		all_ratings = Rating.where({job_id: self.id, good: true})
 		all_ratings.length
 	end
 

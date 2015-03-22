@@ -6,7 +6,7 @@ class JobsController < ApplicationController
 	end
 
 	def create
-		new_job = Job.create({user_id: current_user.id, position: params["position"], yelp_id: params[:business_id]})
+		new_job = Job.create({user_id: current_user.id, position: params["position"], business_id: params["id"]})
 		redirect_to '/businesses/' + params[:business_id] + '/jobs/' + new_job.id.to_s
 		# redirect_to business_job_path(new_job.business, new_job)
 	end
