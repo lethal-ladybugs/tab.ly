@@ -19,13 +19,6 @@ class F_square
   def normalize_response(response)
   	venues = []
   	response['response']['venues'].each do |venue|
-  		# each = {
-    #     fs_id: venue["id"],
-  		# 	name: venue['name'],
-  		# 	address: venue['location']['address'],
-  		# 	phone: venue['contact']['formattedPhone'],
-  		# 	photo: getPhoto(venue)
-  		# }
   		venues << getPhoto(venue)
   	end
   	venues
