@@ -20,57 +20,58 @@
 
 		<% unless current_user %>
 
-				<div id="form" style="display:none">
-			
-				<div id="signup-form">
+				<div id="form" class='modal' style="display:none; width: 800px">
+				<div class="pure-g">
+				<!-- <div class="float-left"> -->
+				<div id="signup-form" class='pure-u-1-2 text-center center'>
 				<h1>Create a new account</h1>
 				
-				<%= form_tag '/users', :method => 'CREATE', multipart: true, :id => 'new-user-form' do %>
+				<%= form_tag '/users', :method => 'CREATE', multipart: true, :id => 'new-user-form', class: "" do %> 
+  					
+  					<%= text_field(:user, :f_name, placeholder: "First Name", class:"all_inputs")%><br>
 
- 						 <%= label_tag(:avatar, "Your Pic")%>
-  					<%= file_field(:user, :avatar)%><br>
+ 					
+  					<%= text_field(:user, :l_name, placeholder: "Last Name")%><br>
 
-  					<%= label_tag(:f_name, "First Name")%>
-  					<%= text_field(:user, :f_name)%><br>
+  					
+  					<%= email_field(:user, :email, placeholder: "Email")%><br>
 
- 						<%= label_tag(:l_name, "Last Name")%>
-  					<%= text_field(:user, :l_name)%><br>
+  					<%= password_field(:user, :password, placeholder: "Password")%><br>
 
-  					<%= label_tag(:email, "Email")%>
-  					<%= email_field(:user, :email)%><br>
+  					<%= password_field(:user, :password_confirmation, placeholder: "Confirm Password")%><br>
+					<div class="center">
+  					<%= label_tag(:avatar, "Your Pic")%>
+  					<%= file_field(:user, :avatar)%>
+  					</div>
+  					<br>
 
-  					<%= label_tag("Password")%> 
-  					<%= password_field(:user, :password)%><br>
 
-  					<%= label_tag("Confirm Password")%>
-  					<%= password_field(:user, :password_confirmation)%><br>
-
-  					<%= submit_tag "Signup" %>
+  					<%= submit_tag "Signup", class: "button-large button" %>
 						<% end %>
-					</div>
-
-				<div id="signin-form">
+				</div>
+				<!-- </div> -->
+				<!-- <div class="float-right"> -->
+				<div id="signin-form" class='pure-u-1-2'>
+				
 				<h1>Log in</h1>
 
 						<%= form_tag sessions_path, method: 'post' do %>
 
-						 	<%= label_tag(:email, "Email")%>
   						
-  						<%= email_field(:user, :email)%><br>
+  						<%= email_field(:user, :email, placeholder: "Email")%><br>
 
- 							<%= label_tag(:user, "Password")%>
   						
-  						<%= password_field(:user, :password)%><br>
+  						<%= password_field(:user, :password, placeholder: "Password")%><br>
 
-  						<%= submit_tag "Login" %>
+  						<%= submit_tag "Login", class: "button-large button" %>
 						<% end %>
 				</div>
-				
+				<!-- </div> -->
+				</div>
 				</div>
 				<%= link_to_modal "Signup", "#form", :class => "button" %>
 				<%= link_to_modal "Login", "#form", :class => "button" %>
 				
-
 		<% end %>	
 		
 		</div>
