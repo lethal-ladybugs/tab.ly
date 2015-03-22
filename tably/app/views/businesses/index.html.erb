@@ -1,28 +1,34 @@
 
+
+<% counter = 1 %>
+<% spacing = " " %>
+
 <% @businesses.each do |business| %>
 
 <div class="pure-g">
 
-<div class="pure-u-1-2">
-	<% if business[:photo] == "none" %>
-	 	<a href="/businesses/<%=business[:id]%>"><img class="default-logo" src="/assets/logo_final.png" alt=""></a>
-	<% else %>
- 		<a href="/businesses/<%=business[:id]%>"><img src="<%= business[:photo] %>" alt=""></a>
- 	<% end %>	
- </div>
- 
-<div class="pure-u-1-2">
-<div class="float-right width">
-<h3> <a href="/businesses/<%=business[:id]%>"><%= business[:name] %></a></h3>
-<h3><%= business[:address]%></h3>
-<h3><%= business[:phone] %></h3> 
-<form action="/businesses/<%=business[:id]%>">
-    <input type="submit" value='Go' class='button-large button'>
-</form>
-</div>
-</div>
+	<div class="pure-u-1-3">
+		<% if business[:photo] == "none" %>
+		 	<a href="/businesses/<%=business[:id]%>"><img class="default-logo" src="/assets/logo_final.png" alt=""></a>
+		<% else %>
+	 		<a href="/businesses/<%=business[:id]%>"><img class="bus-photo" src="<%= business[:photo] %>" alt=""></a>
+	 	<% end %>	
+	 </div>
+
+	 <div class="pure-u-1-3 name-index">
+			<p> <span id="counter"><%= counter %>.</span> <span id="spacing"><%= spacing %><span> <a href="/businesses/<%=business[:id]%>"><%= business[:name] %></a></p>
+	 </div>
+	 
+	<div class="pure-u-1-3 address-index">
+			<p><%= business[:address]%></p>
+			<p><%= business[:phone] %></p
+			<form action="/businesses/<%=business[:id]%>">
+			    <input type="submit" value='Go' class='button-large button go'>
+			</form>
+	</div>
 </div>
 <hr>
+<% counter += 1 %>
 <% end %>
 
 
