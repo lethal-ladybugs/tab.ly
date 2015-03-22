@@ -19,14 +19,14 @@ class F_square
   def normalize_response(response)
   	venues = []
   	response['response']['venues'].each do |venue|
-  		each = {
-        fs_id: venue["id"],
-  			name: venue['name'],
-  			address: venue['location']['address'],
-  			phone: venue['contact']['formattedPhone'],
-  			photo: getPhoto(venue)
-  		}
-  		venues << each
+  		# each = {
+    #     fs_id: venue["id"],
+  		# 	name: venue['name'],
+  		# 	address: venue['location']['address'],
+  		# 	phone: venue['contact']['formattedPhone'],
+  		# 	photo: getPhoto(venue)
+  		# }
+  		venues << getPhoto(venue)
   	end
   	venues
   end
@@ -38,7 +38,7 @@ class F_square
   	business = Business.find_by({fs_id: id})
 
   	if business
-  		url = business.photo
+  		business
   	else
 	  	conn = Faraday.new(url: "https://api.foursquare.com/")
 	    response = conn.get("v2/venues/#{ id }/photos?client_id=M33X4KUQHS41MLWGZGNQVBOFGU3HOZIVJDXBV5YNR2NZARDB&client_secret=IE3YZZUOE34UP1HIO2ZQC1KGZTQAXQN3HUXUW2XVDO2JGBYR&limit=1&v=20130815")
@@ -56,7 +56,7 @@ class F_square
         address: venue['location']['address'],
         phone: venue['contact']['formattedPhone']
       })
-	  	new_b.photo
+	  	new_b
 	  end
   end
 

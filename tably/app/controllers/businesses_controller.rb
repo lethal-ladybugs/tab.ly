@@ -6,11 +6,11 @@ class BusinessesController < ApplicationController
 		# added the extra .split.join to location so it will function with a neighborhood along with postal code.
 		location = params['business']['zipcode'].split.join('+') || 'New+York+City'
 
-		@parsed = F_square.new("something").get(location, terms)
+		@businesses = F_square.new("something").get(location, terms)
 	end
 
 	def show
-		@business = Business.find_by({fs_id: params[:id]})
+		@business = Business.find_by({id: params[:id]})
 		@employees = @business.jobs
 	end
 
