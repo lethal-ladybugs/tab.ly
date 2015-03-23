@@ -10,8 +10,36 @@
 	margin: 0 auto;
 }
 
-#user_avatar {
-	position: absolute;
-	top: -200px;
+[type=file] {
+	color: red;
+	text-align: center;
+	margin: 10px auto;
+	position: relative;
+	left: 60px;
+	display: block;
 }
 
+.pure-form {
+	margin-top: 5px;
+}
+
+/*[type=text] {
+	margin: 5px;
+}
+*/
+
+/*
+#user_avatar {
+	position: absolute;
+	
+}*/
+
+/*.signup-form {
+	width: 200px;
+}*/
+
+/*#new-user-form {
+	width: 200px;
+	overflow: hidden;
+	display: block;
+}*/

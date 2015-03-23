@@ -1,9 +1,10 @@
 
 console.log('linked');
-
 $button = $('#hello');
-$upload = $('#user_avatar');
+$upload = $('input:file');
 
-$button.on('click', function() {
-	$('#user_avatar').trigger('click');
+$button.on('change', function() {
+	$upload.trigger('click');
 })
+
+
