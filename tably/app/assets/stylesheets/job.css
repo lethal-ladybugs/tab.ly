@@ -1,4 +1,9 @@
 
+.desc{
+	position: relative;
+	vertical-align: middle;
+}
+
 .photo-inside-modal {
 	margin: 0 auto;
 	display: block;
@@ -14,13 +19,23 @@
 	cursor: hand;
 }
 
+.image{
+	border-right: 1px gray solid;
+	text-align: center;
+}
+
+#job-info{
+	margin-top: 3em;
+}
+
 #tiny-heart {
 	width: 30px;
 	height: 30px;
 	display: inline-block;
-	position: absolute;
-	top: 279px;
-	margin: 2px;
+	/*position: absolute;*/
+	/*top: 50px;*/
+	/*margin: 2px;*/
+	/*margin-top: 1em;*/
 }
 
 input[type="radio"], label {
@@ -32,14 +47,23 @@ input[type="radio"], label {
 	display: block;
 }
 
+.name{
+	margin-bottom: 0em;
+}
+.position{
+	margin: .4em 0 .4em 0;
+}
+
 .rate-me-button {
-	position: absolute;
-	top: 350px;
+	position: relative;
 	width: 150px;
+	margin-top: 4em;
 }
 
 .ratings {
 	font-size: 20px;
+	display: inline-block;
+	margin: 0;
 }
 
 .name {

@@ -22,8 +22,10 @@
 		</div>
 
 		<%= link_to_modal "I work here!", "#form",  :class => "button-large pure-button" %>
+		<% elsif current_user%>
+			<h4>You Work Here</h4>
 		<% else %>
-		<h4>You Work Here</h4>
+			<%= link_to_modal "Login to Claim work here", "#form", :class => "button-large button" %>
 		<% end %>
 	</div>
 </div>
