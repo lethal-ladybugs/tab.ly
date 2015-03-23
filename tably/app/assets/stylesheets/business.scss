@@ -83,3 +83,24 @@ p {
 #counter {
 	color: black;
 }
+
+.outer-busi-div{
+	background: url('header.png');
+	width: 100%;
+	height: 350px;
+	background-repeat: none;
+	background-size: cover;
+	position: relative;
+}
+
+.business-info{
+	padding: 1em;
+	border-radius: 10px;
+	background-color: white;
+	height: 65%;
+	width: 35%;
+	position: absolute;
+	left: 15%;
+	top: 10%;
+
+}
