@@ -1,16 +1,16 @@
-<div id="user-login">
+<div id="user-login" class='text-center'>
 
 <h1>Login!</h1>
 
-<p> <%= flash[:notice] %> </p>
+<p class='error'> <%= flash[:notice] %> </p>
 
 <%= form_tag sessions_path, method: 'post' do %>
   
  	<%= label_tag(:email, "Email")%>
-  <%= email_field(:user, :email)%><br>
+  <%= email_field(:user, :email, placeholder: "Email")%><br>
 
   <%= label_tag(:user, "Password")%>
-  <%= password_field(:user, :password)%><br>
+  <%= password_field(:user, :password, placeholder: "Password")%><br>
 
   <%= submit_tag "Login" %>
 
