@@ -1,8 +1,7 @@
 <div id="user-signup">
 
-<h1>Signup!</h1>
 
-  <p> <%= flash[:notice] %> </p>
+  <p class="error"> <%= flash[:notice] %> </p>
 
   <%= form_tag '/users', :method => 'CREATE', multipart: true, :id => 'new-user-form' do %>
 
@@ -15,26 +14,31 @@
 
 <% end %>
 
-  <%= label_tag(:avatar, "Your Pic")%>
-  <%= file_field(:user, :avatar)%><br>
+<div class="signup-form text-center">
+<h1>Signup!</h1>
+  <div class="avatar-form">
+    <%= label_tag(:avatar, "Your Pic")%>
+    <%= file_field(:user, :avatar)%>
+  </div>
 
-  <%= label_tag(:f_name, "First Name")%>
-  <%= text_field(:user, :f_name)%><br>
+    <%= label_tag(:f_name, "First Name")%>
+    <%= text_field(:user, :f_name, :placeholder => "First Name")%><br>
 
- 	<%= label_tag(:l_name, "Last Name")%>
-  <%= text_field(:user, :l_name)%><br>
+    <%= label_tag(:l_name, "Last Name")%>
+    <%= text_field(:user, :l_name, :placeholder => "Last Name")%><br>
 
-  <%= label_tag(:email, "Email")%>
-  <%= email_field(:user, :email)%><br>
+    <%= label_tag(:email, "Email")%>
+    <%= email_field(:user, :email, :placeholder => "Email")%><br>
 
-  <%= label_tag("Password")%> 
-  <%= password_field(:user, :password)%><br>
+    <%= label_tag("Password")%> 
+    <%= password_field(:user, :password, :placeholder => "Password")%><br>
 
-  <%= label_tag("Confirm Password")%>
-  <%= password_field(:user, :password_confirmation)%><br>
+    <%= label_tag("Confirm Password")%>
+    <%= password_field(:user, :password_confirmation, :placeholder => "Confirm Password")%><br>
 
-  <%= submit_tag "Signup" %>
-<% end %>
+    <%= submit_tag "Signup", :class => "pure-button pure-button-primary form" %>
+  <% end %>
+</div>
 
 </div>
 
