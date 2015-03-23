@@ -78,8 +78,17 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
+# production:
+#   <<: *default
+#   database: tably_production
+#   username: tably
+#   password: <%= ENV['TABLY_DATABASE_PASSWORD'] %>
+
 production:
-  <<: *default
-  database: tably_production
-  username: tably
-  password: <%= ENV['TABLY_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  database: <%= ENV['PGDB'] %>
+  pool: 5
+  timeout: 5000
+  username: <%= ENV['PGUSER'] %>
+  password: <%= ENV['PGPW'] %>
