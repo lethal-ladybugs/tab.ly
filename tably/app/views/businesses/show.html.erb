@@ -1,4 +1,8 @@
 
+<%= binding.pry %>
+
+<% if current_user && !(@business.has_employee(current_user.id)) %>
+
 <div id="form" style="display:none">
 <%= form_tag('/businesses/' + @business[:id].to_s + '/jobs', method: 'post') do %>
 <%= label_tag(:position, "JOB POSITION:")%>
@@ -10,6 +14,8 @@
 </div>
 
 <%= link_to_modal "I work here!", "#form",  :class => "button-secondary pure-button" %>
+
+<% end %>
 
 <h1><%= @business[:name] %></h1>
 <h2>Employees of this Business</h2>
