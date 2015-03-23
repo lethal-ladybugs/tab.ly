@@ -14,10 +14,10 @@
 		<div id="form" style="display:none">
 		<%= form_tag('/businesses/' + @business[:id].to_s + '/jobs', method: 'post') do %>
 		<%= label_tag(:position, "JOB POSITION:")%>
-		<%= text_field_tag(:position) %>
+		<%= text_field(:position, nil, :placeholder => "Job Position")%>
 		<%= hidden_field_tag(:id, @business.id) %>
 		<h1><%= @business[:name] %></h1>
-		<%= submit_tag("submit") %>
+		<%= submit_tag("submit", :class => "pure-button pure-button-primary")%>
 		<% end %>
 		</div>
 
