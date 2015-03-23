@@ -28,6 +28,10 @@ ul{
 	margin-left: .4em;
 }
 
+.error{
+	color: red;
+}
+
 .inline-block{
 	display: inline-block;
 }
