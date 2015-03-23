@@ -11,6 +11,7 @@ class JobsController < ApplicationController
 		else
 			flash[:notice] = "You need to be signed in"
 			redirect_to '/businesses/' + params["id"].to_s
+		end
 		if check_job
 			flash[:notice] = "You are already an employee here"
 			redirect_to '/businesses/' + params["id"].to_s

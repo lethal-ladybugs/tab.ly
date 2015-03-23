@@ -27,7 +27,7 @@
 			<% end %>
 				<p class='ratings'><%= @job.rating_count %><img id="tiny-heart" src="/assets/heart.png"><p> 
 		</div>
-
+		<% if current_user %>
 		<div id="rate" style="display:none">
 			<%= image_tag @job.user.avatar.url(:medium), :class => "photo-inside-modal" %>
 			<div class="like-buttons-container">
@@ -43,6 +43,9 @@
 		 <% end %>
 		</div>
 		<%= link_to_modal "Rate Me !", "#rate",  :class => "pure-button rate-me-button" %>
+		<% else %>
+		<%= link_to_modal "Login to Rate", "#form", :class => "pure-button rate-me-button" %>
+		<% end %>
 	</div>
 
 </div>
