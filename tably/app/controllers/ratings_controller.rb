@@ -1,7 +1,10 @@
 class RatingsController < ApplicationController
 
 	def create
-		@ratings = Rating.create({job_id: params[:job_id], user_id: current_user.id, good: params[:button]})
+		@rating_check = Rating.find_by({job_id: params[:job_id], user_id: current_user})
+		if !@rating_check && current_user
+			@ratings = Rating.create({job_id: params[:job_id], user_id: current_user.id, good: params[:button]})
+		end
 		redirect_to '/businesses/' + params[:business_id].to_s + '/jobs/' + params[:job_id].to_s
 	end
 end

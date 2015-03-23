@@ -1,0 +1,47 @@
+<div id="form">
+			
+				<div id="signup-form">
+				<h1>Create a new account</h1>
+				
+				<%= form_tag '/users', :method => 'CREATE', multipart: true, :id => 'new-user-form' do %>
+
+ 						 <%= label_tag(:avatar, "Your Pic")%>
+  					<%= file_field(:user, :avatar)%><br>
+
+  					<%= label_tag(:f_name, "First Name")%>
+  					<%= text_field(:user, :f_name)%><br>
+
+ 						<%= label_tag(:l_name, "Last Name")%>
+  					<%= text_field(:user, :l_name)%><br>
+
+  					<%= label_tag(:email, "Email")%>
+  					<%= email_field(:user, :email)%><br>
+
+  					<%= label_tag("Password")%> 
+  					<%= password_field(:user, :password)%><br>
+
+  					<%= label_tag("Confirm Password")%>
+  					<%= password_field(:user, :password_confirmation)%><br>
+
+  					<%= submit_tag "Signup" %>
+						<% end %>
+					</div>
+
+				<div id="signin-form">
+				<h1>Log in</h1>
+
+						<%= form_tag sessions_path, method: 'post' do %>
+
+						 	<%= label_tag(:email, "Email")%>
+  						
+  						<%= email_field(:user, :email)%><br>
+
+ 							<%= label_tag(:user, "Password")%>
+  						
+  						<%= password_field(:user, :password)%><br>
+
+  						<%= submit_tag "Login" %>
+						<% end %>
+				</div>
+				
+</div>

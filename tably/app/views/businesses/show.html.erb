@@ -1,26 +1,46 @@
-<h3>Add employee/job</h3>
 
 
 
-<div id="form" style="display:none">
-<%= form_tag('/businesses/' + @business['id'] + '/jobs', method: 'post') do %>
-<%= label_tag(:position, "JOB POSITION:")%>
-<%= text_field_tag(:position) %>
-<%= submit_tag("submit") %>
-<% end %>
+
+<div class="outer-busi-div">
+	<div class="business-info">
+		<h1><%= @business[:name] %></h1>
+
+		<h3> <%= @business[:address] %> </h3>
+		<h3> <%= @business[:phone] %></h3>
+
+		<% if current_user && !(@business.has_employee(current_user.id)) %>
+
+		<div id="form" style="display:none">
+		<%= form_tag('/businesses/' + @business[:id].to_s + '/jobs', method: 'post') do %>
+		<%= label_tag(:position, "JOB POSITION:")%>
+		<%= text_field(:position, nil, :placeholder => "Job Position")%>
+		<%= hidden_field_tag(:id, @business.id) %>
+		<h1><%= @business[:name] %></h1>
+		<%= submit_tag("submit", :class => "pure-button pure-button-primary")%>
+		<% end %>
+		</div>
+
+		<%= link_to_modal "I work here!", "#form",  :class => "button-large pure-button" %>
+		<% elsif current_user%>
+			<h4>You Work Here</h4>
+		<% else %>
+			<%= link_to_modal "Login to Claim work here", "#form", :class => "button-large button" %>
+		<% end %>
+	</div>
 </div>
 
-<%= link_to_modal "Form", "#form", :class => "button" %>
-
-<h1><%= @business['name'] %></h1>
+<hr>
+<h2>Employees of this Business</h2>
+<div class="pure-g">
 <% @employees.each do |employee| %>
-<% array = [] %>
-	<a href="/businesses/<%=employee.yelp_id%>/jobs/<%=employee.id%>"><h3><%=employee.user.fullname %></h3></a>
-		<% employee.ratings.each do |ratings| %>
-			<% if ratings.good == true %>
-				<% x = ratings.good %>
-				<% array.push(x) %>
-				<% end %>
-		<% end %>
-	<h3>RATING: <%= array.length %></h3>
+	<div class="employee text-center pure-u-1-3">
+	<div class="image">
+			<%= image_tag employee.user.avatar.url(:medium), class: 'user-photo' %>
+		</div>
+	<a href="/businesses/<%=employee.business[:id]%>/jobs/<%=employee.id%>"><h3><%=employee.user.fullname %></h3></a>
+	<!-- <h3>RATING: <%= employee.rating_count %></h3> -->
+	<h3> <%= employee.position %> </h3>
+	</div>
 <% end %>
+</div>

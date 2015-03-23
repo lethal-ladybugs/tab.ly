@@ -1,12 +1,55 @@
+#header{
+	padding-top: 10px;
+	height: 100px;
+	margin-bottom: 40px;
+}
+
+#search-header{
+	margin-top: 15px;
+	text-align: center;
+}
+
+#search-header input{
+	margin-bottom: 20px;
+	padding: 5px;
+	/*border: 1px solid gray;*/
+}
+
+#search-header a{
+	margin-left: 20px;
+}
+
 #main-form{
 	margin: 1em 0 2em 0;
-	height: 700px;
-	background-image: url(http://upload.wikimedia.org/wikipedia/commons/4/42/Barista_COSTA_COFFEE.JPG);
+	height: 600px;
+	background-image: url('main_image.png');
+	background
 	background-repeat: none;
 	background-size: cover;
 	position: relative;
 }
 
+<<<<<<< HEAD
+=======
+
+#middle-text p{
+	padding-top: 20px;
+	color: white;
+	line-height: 1.5em;
+	font-size: 25px;
+}
+
+.text-color {
+	color: black;
+}
+
+/*#main-form::after{
+	content: 'somthings';
+	border-bottom: 4px solid black;
+	margin-top: 2em;
+}*/
+
+>>>>>>> master
 #outer-form{
 	position: absolute;
 	width: 100%;
@@ -16,14 +59,29 @@
 }
 
 #inner-form{
+	margin-top: 1em;
 	position: relative;
 	color: #D5DFE9;
 	height: 100%;
 	width: 100%;
 }
 
+#inner-form h1{
+	color: white;
+}
+
 #howItWorks{
+<<<<<<< HEAD
 	margin-left: 5%;
 }
 
 6142133640
+=======
+	margin-left: 8%;
+}
+
+#new-user-form input{
+	margin-left: auto;
+	margin-right: auto;
+}
+>>>>>>> master

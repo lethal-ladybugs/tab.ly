@@ -1,17 +1,79 @@
-<div class="pure-g">
+<div id='header' class="pure-g">
 
 	<div id='header-img' class='pure-u-1-2'>
 		<div class="float-left">
-			<img src="logo.png" alt="" width='100px' height='100px'>
+			<a href="/"><img src="/assets/logo_final.png" alt="" width='110px' height='110px'></a>
 		</div>
 	</div>
 
-	<div class='pure-u-1-2' id='header'>
+	<div class='pure-u-1-2' id='search-header'>
 		<div class="float-right">
 			<input type="text" id="search_inp" placeholder='Search for business' class='block'>
 
-			<a href="/sessions/new" class="sign_in">Sign In</a>
-			<a href="/users/new" class="sign_up">Sign Up</a>
+
+		<% if current_user %>
+			
+			<%= link_to "Log Out", '/sessions', method: :delete, :id => 'log-out-link' %><br>
+		<%end%>
+
+		
+
+		<% unless current_user %>
+
+				<div id="form" class='modal' style="display:none; width: 800px">
+				<div class="pure-g">
+				<!-- <div class="float-left"> -->
+				<div id="signup-form" class='pure-u-1-2 text-center center'>
+				<h1>Create a new account</h1>
+				
+				<%= form_tag '/users', :method => 'CREATE', multipart: true, :id => 'new-user-form', class: "" do %> 
+  					
+  					<%= text_field(:user, :f_name, placeholder: "First Name", class:"all_inputs")%><br>
+
+ 					
+  					<%= text_field(:user, :l_name, placeholder: "Last Name")%><br>
+
+  					
+  					<%= email_field(:user, :email, placeholder: "Email")%><br>
+
+  					<%= password_field(:user, :password, placeholder: "Password")%><br>
+
+  					<%= password_field(:user, :password_confirmation, placeholder: "Confirm Password")%><br>
+					<div class="center">
+  					<%= label_tag(:avatar, "Your Pic")%>
+  					<%= file_field(:user, :avatar)%>
+  					</div>
+  					<br>
+
+
+  					<%= submit_tag "Signup", class: "button-large button" %>
+						<% end %>
+				</div>
+				<!-- </div> -->
+				<!-- <div class="float-right"> -->
+				<div id="signin-form" class='pure-u-1-2'>
+				
+				<h1>Log in</h1>
+
+						<%= form_tag sessions_path, method: 'post' do %>
+
+  						
+  						<%= email_field(:user, :email, placeholder: "Email")%><br>
+
+  						
+  						<%= password_field(:user, :password, placeholder: "Password")%><br>
+
+  						<%= submit_tag "Login", class: "button-large button" %>
+						<% end %>
+				</div>
+				<!-- </div> -->
+				</div>
+				</div>
+				<%= link_to_modal "Signup", "#form", :class => "button" %>
+				<%= link_to_modal "Login", "#form", :class => "button" %>
+				
+		<% end %>	
+		
 		</div>
 	</div>
 </div>

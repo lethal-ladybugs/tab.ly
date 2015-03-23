@@ -1,11 +1,12 @@
 html{
 	font-size: 16px;
 }
+
 h1{
 	font-size: 1.5em;
 }
-body{
-	font-family: ‘Open Sans’, sans-serif;
+body, h1 {
+	font-family: 'Open Sans', sans-serif;
 	color: #4A4A4A;
 }
 
@@ -27,6 +28,10 @@ ul{
 	margin-left: .4em;
 }
 
+.error{
+	color: red;
+}
+
 .inline-block{
 	display: inline-block;
 }
@@ -38,11 +43,15 @@ ul{
 	margin: 0 auto;
 }
 
+
 .all_inputs{
-	border-radius: .4em;
-	padding: .3em;
-	/*margin-top: 1em;*/
-	display: inline-block;
+	/*border-radius: .4em;*/
+	padding: 5px;
+	width: 12em;
+}
+
+#spacing {
+	margin-left: 5px;
 }
 
 .text-center{
@@ -55,6 +64,7 @@ a {
 
 .center{
 	margin: 0 auto;
+	display: block;
 }
 
 .absolute-center{

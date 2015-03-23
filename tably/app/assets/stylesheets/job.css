@@ -1,0 +1,75 @@
+
+.desc{
+	position: relative;
+	vertical-align: middle;
+}
+
+.photo-inside-modal {
+	margin: 0 auto;
+	display: block;
+}
+
+.like-buttons-container {
+	text-align: center;
+}
+
+.like-buttons-container img {
+	margin: 0 auto;
+	cursor: pointer; 
+	cursor: hand;
+}
+
+.image{
+	border-right: 1px gray solid;
+	text-align: center;
+}
+
+#job-info{
+	margin-top: 3em;
+}
+
+#tiny-heart {
+	width: 30px;
+	height: 30px;
+	display: inline-block;
+}
+
+input[type="radio"], label {
+	display: none;
+}
+
+.submit-modal-button {
+	margin: 0 auto;
+	display: block;
+}
+
+.name{
+	margin-bottom: 0em;
+}
+.position{
+	margin: .4em 0 .4em 0;
+}
+
+.rate-me-button {
+	position: relative;
+	width: 150px;
+	margin-top: 4em;
+}
+
+.ratings {
+	font-size: 20px;
+	display: inline-block;
+	margin: 0;
+}
+
+.name {
+	font-size: 2em;
+	font-style: bold;
+	color: black;
+}
+
+.position {
+	font-size: 1.5em;
+	color: black;
+	margin-bottom: 15px;
+}
