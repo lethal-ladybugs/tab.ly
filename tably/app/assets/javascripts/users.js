@@ -1,19 +1,9 @@
-// jQuery(function() {
-// 	var $userSignUp = $('#new-user-form');
 
-// 	$userSignUp.on('submit',function(e) {
+console.log('linked');
 
-// 		// e.preventDefault();
-// 		$.ajax('/users',{
-// 			type: 'POST',
-// 			dataType: 'json',
-// 			data: $userSignUp.serialize(),
-// 			success: function(data) {
-// 				if (data) {
-// 					console.log(data)
-// 				} 
-// 			}
-// 		})
-// 		return false;
-// 	})
-// })
+$button = $('#hello');
+$upload = $('#user_avatar');
+
+$button.on('click', function() {
+	$('#user_avatar').trigger('click');
+})
