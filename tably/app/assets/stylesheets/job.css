@@ -15,11 +15,11 @@
 }
 
 #tiny-heart {
-	width: 20px;
-	height: 20px;
+	width: 30px;
+	height: 30px;
 	display: inline-block;
 	position: absolute;
-	top: 206px;
+	top: 279px;
 	margin: 2px;
 }
 
@@ -36,4 +36,20 @@ input[type="radio"], label {
 	position: absolute;
 	top: 350px;
 	width: 150px;
+}
+
+.ratings {
+	font-size: 20px;
+}
+
+.name {
+	font-size: 2em;
+	font-style: bold;
+	color: black;
+}
+
+.position {
+	font-size: 1.5em;
+	color: black;
+	margin-bottom: 15px;
 }
