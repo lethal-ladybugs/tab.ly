@@ -36,6 +36,10 @@ gem 'jquery-modal-rails'
 gem 'httparty'
 # Use Unicorn as the app server
 gem 'unicorn'
+
+gem 'yelp'
+
+gem "paperclip", "~> 4.2"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -53,9 +57,7 @@ group :development, :test do
 
   gem 'devise'
 
-  gem 'yelp'
-
-  gem "paperclip", "~> 4.2"
+  
 
 end
 
