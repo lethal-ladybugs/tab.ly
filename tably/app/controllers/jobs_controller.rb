@@ -7,7 +7,6 @@ class JobsController < ApplicationController
 	end
 
 	def create
-		binding.pry
 		if current_user
 			check_job = Job.find_by({user_id: current_user.id, business_id: params["id"]})
 		else
