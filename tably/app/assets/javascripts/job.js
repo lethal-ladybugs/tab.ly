@@ -11,13 +11,13 @@ window.onload = function() {
 		var uncheckedX = '/assets/x_unchecked.png';
 
 		$likeButton.on('click', function(){
-			$('#button_true').trigger('click');
+			$('#rating_good_true').trigger('click');
 			$('#like').attr('src', checkedHeart);
 			$('#dislike').attr('src', uncheckedX);
 		});
 
 		$dislikeButton.on('click', function(){
-			$('#button_false').trigger('click');
+			$('#rating_good_false').trigger('click');
 			$('#dislike').attr('src', checkedX);
 			$('#like').attr('src', uncheckedHeart);
 		});

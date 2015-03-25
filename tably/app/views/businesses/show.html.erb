@@ -12,10 +12,10 @@
 		<% if current_user && !(@business.has_employee(current_user.id)) %>
 
 		<div id="form" style="display:none">
-		<%= form_tag('/businesses/' + @business[:id].to_s + '/jobs', method: 'post') do %>
+		<%= form_tag([@business, @job], method: 'post') do %>
 		<%= label_tag(:position, "JOB POSITION:")%>
-		<%= text_field_tag(:position, nil, :placeholder => "Job Position")%>
-		<%= hidden_field_tag(:id, @business.id) %>
+		<%= text_field(:job, :position, :placeholder => "Job Position")%>
+		<%= hidden_field(:job, :business_id, value: @business.id) %>
 		<h1><%= @business[:name] %></h1>
 		<%= submit_tag("submit", :class => "pure-button pure-button-primary")%>
 		<% end %>

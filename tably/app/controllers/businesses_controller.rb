@@ -12,6 +12,7 @@ class BusinessesController < ApplicationController
 	def show
 		@business = Business.find_by({id: params[:id]})
 		@employees = @business.jobs
+		@job = Job.new
 	end
 
 end

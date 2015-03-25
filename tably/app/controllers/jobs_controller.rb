@@ -7,6 +7,7 @@ class JobsController < ApplicationController
 	end
 
 	def create
+		binding.pry
 		if current_user
 			check_job = Job.find_by({user_id: current_user.id, business_id: params["id"]})
 		else
@@ -17,13 +18,18 @@ class JobsController < ApplicationController
 			flash[:notice] = "You are already an employee here"
 			redirect_to '/businesses/' + params["id"].to_s
 		else
-			new_job = Job.create({user_id: current_user.id, position: params["position"], business_id: params["id"]})
+			new_job = Job.create(jobs_params)
 			redirect_to '/businesses/' + params[:business_id] + '/jobs/' + new_job.id.to_s
 		end
 	end
 
 	def new
 		@business_id = params[:business_id]
+	end
+
+	private
+	def jobs_params
+		params.require(:job).permit(:business_id, :position).merge(user_id: current_user.id)
 	end
 
 end

@@ -46,12 +46,12 @@
 				<img id="like" src="/assets/unchecked_heart.png">
 			</div>
 			<%= form_tag('/businesses/' + @job.business_id.to_s + '/jobs/' + @job.id.to_s + '/ratings', method: 'post') do %>
-			<%= radio_button_tag(:button, true) %>
+			<%= radio_button(:rating, :good, true) %>
 			<%= label_tag(:like_button, "Like Me?") %>
-			<%= radio_button_tag(:button, false) %>
+			<%= radio_button(:rating, :good, false) %>
 			<%= label_tag(:dislike_button, "Don't like") %>
 			<button class="pure-button pure-button-primary submit-modal-button">Submit Review</button>
-		 <% end %>
+		 	<% end %>
 		</div>
 		<%= link_to_modal "Rate Me !", "#rate",  :class => "pure-button rate-me-button" %>
 		<% else %>
