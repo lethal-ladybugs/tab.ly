@@ -2,13 +2,13 @@
 
 	<div id='header-img' class='pure-u-1-2'>
 		<div class="float-left">
-			<a href="/"><img src="/assets/logo_final.png" alt="" width='110px' height='110px'></a>
+			<a href="/"><img id="logo-img" src="/assets/logo_final.png" alt="" width='150px' height='150px'></a>
 		</div>
 	</div>
 
 	<div class='pure-u-1-2' id='search-header'>
 		<div class="float-right">
-			<input type="text" id="search_inp" placeholder='Search for business' class='block'>
+			<input type="text" id="search_inp" placeholder='Search' class='block font-style'>
 
 
 		<% if current_user %>
@@ -46,7 +46,7 @@
   					<br>
 
 
-  					<%= submit_tag "Signup", class: "button-large button" %>
+  					<%= submit_tag "Sign Up", class: "button-large button" %>
 						<% end %>
 				</div>
 				<!-- </div> -->
@@ -69,8 +69,8 @@
 				<!-- </div> -->
 				</div>
 				</div>
-				<%= link_to_modal "Signup", "#form", :class => "button" %>
-				<%= link_to_modal "Login", "#form", :class => "button" %>
+				<%= link_to_modal "Sign Up", "#form", :class => "button" %>
+				<%= link_to_modal "Log In", "#form", :class => "button" %>
 				
 		<% end %>	
 		

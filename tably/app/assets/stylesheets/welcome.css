@@ -1,18 +1,32 @@
 #header{
-	padding-top: 10px;
-	height: 100px;
-	margin-bottom: 40px;
+/*	padding-top: 10px;
+*/	height: 100px;
+	padding-bottom: 30px;
 }
 
 #search-header{
-	margin-top: 15px;
+	margin-top: 49px;
 	text-align: center;
 }
+.relative {
+	position: relative;
+}
 
+.font-style {
+	font-family: 'Open Sans';
+}
 #search-header input{
 	margin-bottom: 20px;
 	padding: 5px;
 	/*border: 1px solid gray;*/
+}
+
+.round-search {
+	border-radius: 10px;
+}
+
+input[type="text"] {
+	border-radius: 10px;
 }
 
 #search-header a{
