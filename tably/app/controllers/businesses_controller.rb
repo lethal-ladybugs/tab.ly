@@ -12,7 +12,6 @@ class BusinessesController < ApplicationController
 	def show
 		@business = Business.find_by({id: params[:id]})
 		@employees = @business.jobs
-		binding.pry
 		@job = Job.new
 	end
 
