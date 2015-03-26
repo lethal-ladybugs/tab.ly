@@ -4,6 +4,8 @@
 	padding-bottom: 30px;
 }
 
+
+
 #search-header{
 	margin-top: 49px;
 	text-align: center;
@@ -25,13 +27,6 @@
 	border-radius: 10px;
 }
 
-input[type="text"] {
-	border-radius: 10px;
-}
-
-.pure-u-1-2 input[type="text"], .pure-u-md-1-2 input[type="text"] {
-	border-radius: 10px;
-}
 
 #search-header a{
 	margin-left: 20px;

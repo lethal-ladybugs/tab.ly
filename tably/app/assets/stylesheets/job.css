@@ -32,6 +32,8 @@
 	width: 30px;
 	height: 30px;
 	display: inline-block;
+	position: absolute;
+	top: -8px;
 }
 
 input[type="radio"], label {

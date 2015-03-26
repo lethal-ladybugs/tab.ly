@@ -33,14 +33,22 @@
 <hr>
 <h2>Employees</h2>
 <div class="pure-g">
-<% @employees.each do |employee| %>
-	<div class="employee text-center pure-u-1-3">
-	<div>
-			<%= image_tag employee.user.avatar.url(:medium), class: 'user-photo' %>
-	</div>
-	<a href="/businesses/<%=employee.business[:id]%>/jobs/<%=employee.id%>"><h3><%=employee.user.fullname %></h3></a>
-	<!-- <h3>RATING: <%= employee.rating_count %></h3> -->
-	<h3> <%= employee.position %> </h3>
-	</div>
-<% end %>
+
+	<% if @employees == nil %>
+		<% @employees.each do |employee| %>
+			<div class="employee text-center pure-u-1-3">
+			<div>
+					<%= image_tag employee.user.avatar.url(:medium), class: 'user-photo' %>
+			</div>
+			<a href="/businesses/<%=employee.business[:id]%>/jobs/<%=employee.id%>"><h3><%=employee.user.fullname %></h3></a>
+			<!-- <h3>RATING: <%= employee.rating_count %></h3> -->
+			<h3> <%= employee.position %> </h3>
+			</div>
+		<% end %>
+
+	<% else %>
+		<div class="pure-u-1-1 empty-employee-div">
+			<h1> Be the first to sign up! </h1>
+		</div>
+	<% end %>
 </div>
